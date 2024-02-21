@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "api",
     "rest_framework",
+    "ckeditor",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -129,3 +130,13 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',  # Customize the toolbar as per your requirements
+        'height': 300,  # Set the height of the editor
+        'width': 800,   # Set the width of the editor
+    },
+}
+
