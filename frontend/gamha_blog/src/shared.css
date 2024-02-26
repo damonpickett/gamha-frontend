@@ -1,6 +1,16 @@
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Anta&family=MedievalSharp&family=Poppins:wght@300;400;500&family=Special+Elite&family=Spectral+SC:wght@300;400;500;600&family=Spinnaker&display=swap');
 
+@font-face {
+  font-family: 'Alien League';
+  src: url('./fonts/alien_league/alienleaguebold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  src: url('./fonts/sf-mono-font/SF-Mono-Regular.ttf') format('truetype');
+}
+
 /* Spinnaker */
 .spinnaker-regular {
     font-family: "Spinnaker", sans-serif;
@@ -73,7 +83,7 @@
     font-style: normal;
   }
 
-
+/* BASE STYLES */
 html { font-size: 100%; } /* Remember to add to @media screens when necessary */
 h1 { font-size: 2.074em; }
 h2 { font-size: 1.728em; }
@@ -89,4 +99,36 @@ h4 { font-size: 1.2em; }
 body {
   background-color: #000;
   color: white;
+}
+
+h1 {
+    font-family: "Spectral SC", sans-serif;
+    color: #f8fb04;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.4rem;
+}
+
+h2 {
+    font-family: "SF Mono", sans-serif;
+    font-size: 1.3rem;
+}
+
+p {
+    font-family: "Spinnaker", sans-serif;
+}
+
+a {
+    font-family: "Poppins", sans-serif;
+    color: #22FB00;
+    text-decoration: none;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.in-page-nav {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.3rem;
 }

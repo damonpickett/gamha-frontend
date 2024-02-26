@@ -1,14 +1,15 @@
-import React from 'react';
+import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <nav>
-      <ul>
-        <li>Home</li>
-        <li>Blog List</li>
-        <li>Support</li>
-      </ul>
-    </nav>
+    <div className="navbar">
+      <div className="site-title">
+        <h1>GAMHA</h1>
+      </div>
+      <div className="menu-btn">
+        <div className="menu-btn__burger"></div>
+      </div>
+    </div>
   );
 };
 

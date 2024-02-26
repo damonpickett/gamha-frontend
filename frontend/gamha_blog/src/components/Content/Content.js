@@ -1,9 +1,12 @@
 import React from 'react';
+// import home page content
+import Home from '../../pages/Home/Home';
+import './Content.css';
 
 const Content = () => {
   return (
-    <div>
-    <p>Your content goes here</p>
+    <div className='content'>
+        <Home />
     </div>
   );
 };

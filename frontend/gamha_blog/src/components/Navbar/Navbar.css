@@ -1,0 +1,66 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+.site-title h1 {
+  color: white;
+  font-family: "MedievalSharp", system-ui;
+  font-size: 2.074em;
+}
+
+.menu-btn {
+  transition: all 0.5s ease-in-out;
+  width: 3.5rem;
+  height: 3.5rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-btn__burger {
+  width: 2.5rem;
+  height: 0.2rem;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  width: 2.5rem;
+  height: 0.2rem;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-16px);
+  }
+  
+  .menu-btn__burger::after {
+    transform: translateY(16px);
+  }
+  
+  .menu-btn.open .menu-btn__burger {
+    transform: translateX(-50px);
+    background: transparent;
+  }
+  
+  .menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+  
+  .menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
