@@ -1,0 +1,19 @@
+.home-page {
+    padding-top: 1rem;
+}
+
+.jumbotron {
+    text-align: center;
+}
+
+.tagline {
+    font-family: 'Alien League';
+    color: #22FB00;
+    font-size: 1.32rem;
+    margin-bottom: 0.5rem;
+}
+
+.author {
+    font-family: "Special Elite", system-ui;
+    font-size: 1rem;
+}
