@@ -13,7 +13,7 @@ function App() {
   return (
     <div className='App'>
       <NavBar burgerMenu={burgerMenu} setBurgerMenu={setBurgerMenu}/>
-      <BurgerMenu />
+      <BurgerMenu burgerMenu={burgerMenu} setBurgerMenu={setBurgerMenu}/>
       <Content />
       <Footer />
     </div>

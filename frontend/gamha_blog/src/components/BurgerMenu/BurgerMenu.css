@@ -1,0 +1,37 @@
+.burger-menu {
+  background-color: #373436;
+  transition: transform 0.4s;
+  transform: translateX(-100vw, 0, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40vw;
+  height: 100vh;
+  display: block;
+}
+
+.burger-menu-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+}
+
+.burger-menu-nav-item {
+    margin: 1rem 0;
+    font-size: 3rem;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    text-decoration: none;
+}
+
+.visible {
+  transform: translate3d(-0vw, 0, 0);
+}
+
+.hidden {
+  transform: translate3d(-40vw, 0, 0);
+}
