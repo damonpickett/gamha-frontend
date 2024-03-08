@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 import "./Home.css";
 
 const Home = () => {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/posts/3/')
-      .then(response => setPost(response.data))
-      .catch(error => console.error(error));
+    axios
+      .get("http://localhost:8000/api/posts/3/")
+      .then((response) => setPost(response.data))
+      .catch((error) => console.error(error));
   }, []);
 
   return (
@@ -35,19 +36,25 @@ const Home = () => {
         <h2>Latest Post...</h2>
       </div>
       {post ? (
-      <div className="blog-post shared-padding">
-        <div className="shared-title">
-          <h1>{post.title}</h1>
-          <h2>{post.subtitle}</h2>
-          <p className="date">{post.originally_published}</p>
+        <div className="blog-post shared-padding">
+          <div className="shared-title">
+            <h1>{post.title}</h1>
+            <h2>{post.subtitle}</h2>
+          </div>
+          <div
+            className="shared-content"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          ></div>
+          <p className="date">
+            Originally Published: {post.originally_published.split("T")[0]}
+          </p>
+          <p className="date">
+            Last Updated: {post.last_updated.split("T")[0]}
+          </p>
         </div>
-        <div className="shared-content">
-          <p>{post.content}</p>
-        </div>
-      </div>
-    ) : (
-      <div>Loading...</div>
-    )}
+      ) : (
+        <div>Loading...</div>
+      )}
     </div>
   );
 };

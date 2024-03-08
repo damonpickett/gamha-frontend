@@ -117,6 +117,7 @@ h1 {
   font-weight: 300;
   font-style: normal;
   font-size: 1.4rem;
+  line-height: 1.6rem;
 }
 
 h2 {
@@ -126,6 +127,7 @@ h2 {
 
 p {
   font-family: "Spinnaker", sans-serif;
+  margin-bottom: 1rem;
 }
 
 a {
@@ -137,7 +139,7 @@ a {
 }
 
 .shared-title {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   position: relative;
 }
 
