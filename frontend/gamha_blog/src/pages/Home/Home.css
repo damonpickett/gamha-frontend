@@ -4,16 +4,36 @@
 
 .jumbotron {
     text-align: center;
+    margin: 1rem 0 1.5rem;
 }
 
 .tagline {
     font-family: 'Alien League';
     color: #22FB00;
-    font-size: 1.32rem;
+    font-size: 2.1rem;
     margin-bottom: 0.5rem;
 }
 
 .author {
     font-family: "Special Elite", system-ui;
     font-size: 1rem;
+}
+
+.blog-preview {
+    margin-bottom: 1rem;
+}
+
+.page-break {
+    margin-bottom: 1rem;
+}
+
+.page-break h2 {
+    font-size: 1.3rem;
+}
+
+.date {
+    position: absolute;
+    right: 0;
+    top: 0.4rem;
+    font-size: 0.8rem;
 }

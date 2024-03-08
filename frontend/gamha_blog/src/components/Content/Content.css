@@ -1,8 +1,5 @@
-
 .content {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* add left and right padding */
-    padding: 0 1.3rem;
 }

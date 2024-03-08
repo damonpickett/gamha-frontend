@@ -121,7 +121,7 @@ h1 {
 
 h2 {
   font-family: "SF Mono", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 p {
@@ -136,6 +136,19 @@ a {
   font-style: normal;
 }
 
+.shared-title {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.shared-content {
+  margin-bottom: 1rem;
+}
+
+.shared-padding {
+  padding: 0.5rem;
+}
+
 .page-nav {
   font-family: "MedievalSharp", system-ui;
   font-weight: 400;
@@ -144,9 +157,14 @@ a {
   color: #fff;
 }
 
+.in-page-nav-section{}
+
 .in-page-nav {
   font-family: "Anta", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1.3rem;
+}
+
+.blog-post {
 }
