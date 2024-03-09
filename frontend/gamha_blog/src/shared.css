@@ -159,7 +159,11 @@ a {
   color: #fff;
 }
 
-.in-page-nav-section{}
+.blog-post-nav-section {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-around;
+}
 
 .in-page-nav {
   font-family: "Anta", sans-serif;
@@ -169,4 +173,12 @@ a {
 }
 
 .blog-post {
+}
+
+.inherit-style {
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  color: inherit;
 }

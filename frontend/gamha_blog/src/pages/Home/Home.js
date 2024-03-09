@@ -33,7 +33,7 @@ const Home = () => {
         </div>
       </div>
       <div className="page-break shared-padding">
-        <h2>Latest Post...</h2>
+        <h2>Or start here...</h2>
       </div>
       {post ? (
         <div className="blog-post shared-padding">
@@ -51,6 +51,13 @@ const Home = () => {
           <p className="date">
             Last Updated: {post.last_updated.split("T")[0]}
           </p>
+          <div className="blog-post-nav-section">
+          <Link className="in-page-nav" to={`/blogpost/${post.id}`}>
+            Next Post</Link>
+          <Link className="in-page-nav" to="/bloglist">
+            All Posts
+          </Link>
+          </div>
         </div>
       ) : (
         <div>Loading...</div>

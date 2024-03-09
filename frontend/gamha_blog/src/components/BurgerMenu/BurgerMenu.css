@@ -8,6 +8,7 @@
   width: 40vw;
   height: 100vh;
   display: block;
+  z-index: 1;
 }
 
 .burger-menu-nav {
