@@ -4,14 +4,22 @@ import axios from "axios";
 import "./Home.css";
 
 const Home = () => {
+  const [posts, setPosts] = useState([]);
   const [post, setPost] = useState(null);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/posts/3/")
-      .then((response) => setPost(response.data))
+      .get("http://localhost:8000/api/posts/")
+      .then((response) => {
+        setPosts(response.data);
+        const currentPost = response.data.find((p) => p.id === 3);
+        setPost(currentPost);
+      })
       .catch((error) => console.error(error));
   }, []);
+
+  const currentIndex = posts.findIndex((p) => p.id === post?.id);
+  const nextPost = posts[currentIndex - 1];
 
   return (
     <div className="home-page">
@@ -52,8 +60,7 @@ const Home = () => {
             Last Updated: {post.last_updated.split("T")[0]}
           </p>
           <div className="blog-post-nav-section">
-          <Link className="in-page-nav" to={`/blogpost/${post.id}`}>
-            Next Post</Link>
+          {nextPost && <Link className="in-page-nav" to={`/blogpost/${nextPost.id}`}>Next Post</Link>}
           <Link className="in-page-nav" to="/bloglist">
             All Posts
           </Link>
