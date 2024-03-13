@@ -60,10 +60,14 @@ const Home = () => {
             Last Updated: {post.last_updated.split("T")[0]}
           </p>
           <div className="blog-post-nav-section">
-          {nextPost && <Link className="in-page-nav" to={`/blogpost/${nextPost.id}`}>Next Post</Link>}
-          <Link className="in-page-nav" to="/bloglist">
-            All Posts
-          </Link>
+            {nextPost && (
+              <Link className="in-page-nav" to={`/blogpost/${nextPost.id}`}>
+                Next
+              </Link>
+            )}
+            <Link className="in-page-nav" to="/bloglist">
+              All
+            </Link>
           </div>
         </div>
       ) : (
