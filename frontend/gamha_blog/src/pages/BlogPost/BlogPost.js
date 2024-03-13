@@ -39,6 +39,9 @@ function BlogPost() {
             <h2>{post.subtitle}</h2>
           </div>
           <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+          <p className="date">
+            Originally Published: {post.originally_published.split("T")[0]}
+          </p>
           <div className="blog-post-nav-section">
             {previousPost && (
               <Link className="in-page-nav" to={`/blogpost/${previousPost.id}`}>
