@@ -11,7 +11,7 @@ function App() {
   const [burgerMenu, setBurgerMenu] = useState(false);
 
   return (
-    <div className='App'>
+    <div className='App' onClick={() => setBurgerMenu(!burgerMenu)}>
       <NavBar burgerMenu={burgerMenu} setBurgerMenu={setBurgerMenu}/>
       <BurgerMenu burgerMenu={burgerMenu} setBurgerMenu={setBurgerMenu}/>
       <Content />

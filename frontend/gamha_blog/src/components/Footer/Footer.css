@@ -1,3 +1,12 @@
 footer {
     border-top: 1px solid #fff;
 }
+
+.copyright {
+    text-align: center;
+    padding: 15px 0 0;
+}
+
+.copyright p {
+    font-family: "Special Elite", system-ui;
+}

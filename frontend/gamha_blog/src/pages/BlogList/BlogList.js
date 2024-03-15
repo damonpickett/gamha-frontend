@@ -13,8 +13,6 @@ const BlogList = () => {
       .catch((error) => console.error(error));
   }, []);
 
-  console.log(list);
-
   return (
     <div className="blog-list-page">
       {list.map((post) => (
