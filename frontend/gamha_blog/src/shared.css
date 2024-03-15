@@ -152,6 +152,10 @@ a {
   padding: 0.5rem;
 }
 
+.shared-margin-bottom {
+  margin-bottom: 1rem;
+}
+
 .page-nav {
   font-family: "MedievalSharp", system-ui;
   font-weight: 400;

@@ -19,7 +19,7 @@ const Home = () => {
   }, []);
 
   const currentIndex = posts.findIndex((p) => p.id === post?.id);
-  const nextPost = posts[currentIndex - 1];
+  const nextPost = posts[currentIndex + 1];
 
   return (
     <div className="home-page">
@@ -55,9 +55,6 @@ const Home = () => {
           ></div>
           <p className="date">
             Originally Published: {post.originally_published.split("T")[0]}
-          </p>
-          <p className="date">
-            Last Updated: {post.last_updated.split("T")[0]}
           </p>
           <div className="blog-post-nav-section">
             {nextPost && (
