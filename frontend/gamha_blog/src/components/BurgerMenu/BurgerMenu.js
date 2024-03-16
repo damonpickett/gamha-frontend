@@ -4,7 +4,7 @@ import './BurgerMenu.css';
 
 const BurgerMenu = (props) => {
   return (
-    <div className={`burger-menu ${props.burgerMenu ? 'visible' : 'hidden'}`}>
+    <div className={`burger-menu ${props.burgerMenu ? 'visible' : 'hidden'}`} onClick={() => props.setBurgerMenu(!props.burgerMenu)}>
       <nav>
         <ul className='burger-menu-nav'>
           <li className='burger-menu-nav-item'><Link className='page-nav' to="/">Home</Link></li>

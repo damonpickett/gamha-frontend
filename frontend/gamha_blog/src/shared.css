@@ -177,13 +177,15 @@ a {
   font-size: 1.3rem;
 }
 
-.blog-post {
-}
-
 .inherit-style {
   font-family: inherit;
   font-weight: inherit;
   font-style: inherit;
   font-size: inherit;
   color: inherit;
+}
+
+.page-fade-in-transition {
+  opacity: 0;
+  transition: opacity 1s linear;
 }

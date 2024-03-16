@@ -8,13 +8,6 @@ function BlogPost() {
   const [post, setPost] = useState(null);
   const { id } = useParams();
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`http://localhost:8000/api/posts/${id}/`)
-  //     .then((response) => setPost(response.data))
-  //     .catch((error) => console.error(error));
-  // }, [id]);
-
   useEffect(() => {
     axios
       .get("http://localhost:8000/api/posts/")
@@ -26,14 +19,27 @@ function BlogPost() {
       .catch((error) => console.error(error));
   }, [id]);
 
+  useEffect(() => {
+    if (post) {
+      const timer = setTimeout(() => {
+        document.querySelector('.page-fade-in-transition').style.opacity = 1;
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [post]);
+
   const currentIndex = posts.findIndex((p) => p.id === post?.id);
   const previousPost = posts[currentIndex - 1];
   const nextPost = posts[currentIndex + 1];
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [previousPost, nextPost]);
+
   return (
     <>
       {post ? (
-        <div className="blog-post shared-padding">
+        <div className="blog-post shared-padding page-fade-in-transition">
           <div className="shared-title">
             <h1>{post.title}</h1>
             <h2>{post.subtitle}</h2>

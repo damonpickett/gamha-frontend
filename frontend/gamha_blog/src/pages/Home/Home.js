@@ -21,8 +21,15 @@ const Home = () => {
   const currentIndex = posts.findIndex((p) => p.id === post?.id);
   const nextPost = posts[currentIndex + 1];
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      document.querySelector('.page-fade-in-transition').style.opacity = 1;
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="home-page">
+    <div className="home-page page-fade-in-transition">
       <div className="jumbotron">
         <h1 className="tagline">God, Dreams, Intuition, and Psychedelics</h1>
         <h2 className="author">A Blog by Damon Pickett</h2>
