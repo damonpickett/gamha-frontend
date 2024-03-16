@@ -16,7 +16,7 @@ const BlogList = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       document.querySelector('.page-fade-in-transition').style.opacity = 1;
-    }, 100);
+    }, 200);
     return () => clearTimeout(timer);
   }, []);
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import "./BlogPost.css";
 
 function BlogPost() {
   const [posts, setPosts] = useState([]);
@@ -20,12 +21,16 @@ function BlogPost() {
   }, [id]);
 
   useEffect(() => {
-    if (post) {
-      const timer = setTimeout(() => {
-        document.querySelector('.page-fade-in-transition').style.opacity = 1;
-      }, 100);
-      return () => clearTimeout(timer);
-    }
+    const page = document.querySelector(".page-fade-in-transition");
+    // Reset the opacity to 0 every time a new post is loaded
+    page.style.opacity = 0;
+  
+    const timer = setTimeout(() => {
+      // Set the opacity to 1 to apply the fade-in effect
+      page.style.opacity = 1;
+    }, 200);
+  
+    return () => clearTimeout(timer);
   }, [post]);
 
   const currentIndex = posts.findIndex((p) => p.id === post?.id);
@@ -37,9 +42,9 @@ function BlogPost() {
   }, [previousPost, nextPost]);
 
   return (
-    <>
+    <div className="page-fade-in-transition">
       {post ? (
-        <div className="blog-post shared-padding page-fade-in-transition">
+        <div className="blog-post shared-padding">
           <div className="shared-title">
             <h1>{post.title}</h1>
             <h2>{post.subtitle}</h2>
@@ -64,7 +69,7 @@ function BlogPost() {
       ) : (
         <div>Loading...</div>
       )}
-    </>
+    </div>
   );
 }
 

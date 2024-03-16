@@ -1,4 +1,3 @@
-import React from "react";
 import fb from "../../assets/icons/fb.svg";
 import x from "../../assets/icons/x.svg";
 import ig from "../../assets/icons/ig.svg";
@@ -6,6 +5,7 @@ import backToTop from '../../assets/icons/back-to-top-button.svg'
 import "./Footer.css";
 
 const Footer = () => {
+  
   return (
     <footer>
       <div className="scroll-to-top">
