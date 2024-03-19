@@ -5,33 +5,37 @@ import axios from "axios";
 import "./BlogPost.css";
 
 function BlogPost() {
+  
   const [posts, setPosts] = useState([]);
   const [post, setPost] = useState(null);
+  const [fadeIn, setFadeIn] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/posts/")
-      .then((response) => {
-        setPosts(response.data);
-        const currentPost = response.data.find((p) => p.id === parseInt(id));
-        setPost(currentPost);
-      })
-      .catch((error) => console.error(error));
+    setFadeIn(true);
+    const timer = setTimeout(() => setFadeIn(false), 1000); // Adjust the timeout to match your CSS animation duration
+    return () => clearTimeout(timer);
   }, [id]);
 
   useEffect(() => {
     const page = document.querySelector(".page-fade-in-transition");
     // Reset the opacity to 0 every time a new post is loaded
     page.style.opacity = 0;
-  
-    const timer = setTimeout(() => {
-      // Set the opacity to 1 to apply the fade-in effect
-      page.style.opacity = 1;
-    }, 200);
-  
-    return () => clearTimeout(timer);
-  }, [post]);
+
+    axios
+      .get("http://localhost:8000/api/posts/")
+      .then((response) => {
+        setPosts(response.data);
+        const currentPost = response.data.find((p) => p.id === parseInt(id));
+        setPost(currentPost);
+
+        // Apply the fade-in effect after the new post data has been fetched
+        requestAnimationFrame(() => {
+          page.style.opacity = 1;
+        });
+      })
+      .catch((error) => console.error(error));
+  }, [id]);
 
   const currentIndex = posts.findIndex((p) => p.id === post?.id);
   const previousPost = posts[currentIndex - 1];
@@ -44,7 +48,11 @@ function BlogPost() {
   return (
     <div className="page-fade-in-transition">
       {post ? (
-        <div className="blog-post shared-padding">
+        <div
+          className={`blog-post shared-padding ${
+            fadeIn ? "blog-post-fade-in" : ""
+          }`}
+        >
           <div className="shared-title">
             <h1>{post.title}</h1>
             <h2>{post.subtitle}</h2>
