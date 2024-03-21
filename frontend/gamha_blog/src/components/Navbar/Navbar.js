@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = (props) => {
   return (
-    <div className="navbar">
+    <nav>
+    <div className="navbar-spacing">
       <div className="site-title">
-        <h1>GAMHA</h1>
+        <h1><Link className="site-title-link" to='/'>GAMHA</Link></h1>
       </div>
       <div className="nav-links">
         <div className={props.burgerMenu ? "menu-btn open" : "menu-btn"}
@@ -14,6 +16,7 @@ const Navbar = (props) => {
         </div>
       </div>
     </div>
+    </nav>
   );
 };
 

@@ -46,10 +46,10 @@ function BlogPost() {
   }, [previousPost, nextPost]);
 
   return (
-    <div className="page-fade-in-transition">
+    <div className="page-fade-in-transition shared-wrapping">
       {post ? (
         <div
-          className={`blog-post shared-padding ${
+          className={`blog-post ${
             fadeIn ? "blog-post-fade-in" : ""
           }`}
         >

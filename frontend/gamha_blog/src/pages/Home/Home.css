@@ -1,39 +1,56 @@
 .home-page {
-    padding-top: 1rem;
+  /* border: #22fb00 1px solid; */
 }
 
 .jumbotron {
-    text-align: center;
-    margin: 1rem 0 1.5rem;
+  text-align: center;
+  /* border: #22fb00 1px solid; */
+  padding: 2rem 0;
 }
 
 .tagline {
-    font-family: 'Alien League';
-    color: #22FB00;
-    font-size: 2.1rem;
-    margin-bottom: 0.5rem;
-    line-height: normal;
+  font-family: "Alien League";
+  color: #22fb00;
+  font-size: 2.1rem;
+  margin-bottom: 0.5rem;
+  line-height: normal;
+  /* animation: glow 2s ease-in-out infinite; */
+}
+
+@keyframes glow {
+    0% {
+      text-shadow: 0 0 30px #22fb00;
+    }
+    50% {
+      text-shadow: 0 0 150px #ffffff, 0 0 200px #ffffff, 0 0 250px #ffffff, 0 0 300px #890685;
+    }
+    100% {
+      text-shadow: 0 0 30px #22fb00;
+    }
 }
 
 .author {
-    font-family: "Special Elite", system-ui;
-    font-size: 1rem;
+  font-family: "Special Elite", system-ui;
+  font-size: 1rem;
+  color: #ffffff;
 }
 
 .blog-preview {
-    margin-bottom: 1rem;
+  /* border: #22fb00 1px solid; */
+  padding: 2rem 0.5rem;
 }
 
 .page-break {
-    margin-bottom: 1rem;
+    /* border: #22fb00 1px solid; */
+    padding: 2rem 0.5rem;
 }
 
 .page-break h2 {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 .date {
-    font-size: 0.8rem;
-    font-family: "Special Elite", system-ui;
-    margin-bottom: 0.2rem;
+  font-size: 0.8rem;
+  font-family: "Special Elite", system-ui;
+  margin-bottom: 0.2rem;
 }

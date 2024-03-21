@@ -13,7 +13,11 @@ const BlogList = () => {
       .catch((error) => console.error(error));
   }, []);
 
+  
+    
+
   useEffect(() => {
+    window.scrollTo(0, 0);
     const timer = setTimeout(() => {
       document.querySelector('.page-fade-in-transition').style.opacity = 1;
     }, 200);
@@ -21,7 +25,7 @@ const BlogList = () => {
   }, []);
 
   return (
-    <div className="blog-list-page page-fade-in-transition">
+    <div className="blog-list-page page-fade-in-transition shared-wrapping">
       {list.map((post) => (
         <div key={post.id} className="blog-preview shared-padding">
           <div className="shared-title">

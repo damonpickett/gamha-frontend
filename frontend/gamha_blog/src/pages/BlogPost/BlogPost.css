@@ -1,3 +1,7 @@
+.blog-post {
+  padding: 2rem 0.5rem 1rem;
+}
+
 @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -8,5 +12,5 @@
   }
   
   .blog-post-fade-in {
-    animation: fadeIn 2s linear;
+    animation: fadeIn 1s ease-in-out;
   }

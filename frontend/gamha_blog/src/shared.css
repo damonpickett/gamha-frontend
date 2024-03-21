@@ -112,8 +112,8 @@ body {
 }
 
 h1 {
-  font-family: "Spectral SC", sans-serif;
-  color: #f8fb04;
+  font-family: "Alien League";
+  color: #22FB00;
   font-weight: 300;
   font-style: normal;
   font-size: 1.4rem;
@@ -121,7 +121,7 @@ h1 {
 }
 
 h2 {
-  font-family: "SF Mono", sans-serif;
+  font-family: "Spectral SC", serif;
   font-size: 1rem;
   color: #04FDFF;
 }
@@ -133,10 +133,15 @@ p {
 
 a {
   font-family: "Poppins", sans-serif;
-  color: #22fb00;
+  color: #f8fb04;
   text-decoration: none;
   font-weight: 500;
   font-style: normal;
+}
+
+.shared-wrapping {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .shared-title {
@@ -187,5 +192,5 @@ a {
 
 .page-fade-in-transition {
   opacity: 0;
-  transition: opacity 2s linear;
+  transition: opacity 1s ease-in-out;
 }
