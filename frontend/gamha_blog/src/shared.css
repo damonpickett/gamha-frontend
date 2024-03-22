@@ -83,6 +83,8 @@
   font-style: normal;
 }
 
+/* MOBILE */
+
 /* BASE STYLES */
 html {
   font-size: 100%;
@@ -113,7 +115,7 @@ body {
 
 h1 {
   font-family: "Alien League";
-  color: #22FB00;
+  color: #22fb00;
   font-weight: 300;
   font-style: normal;
   font-size: 1.4rem;
@@ -123,7 +125,7 @@ h1 {
 h2 {
   font-family: "Spectral SC", serif;
   font-size: 1rem;
-  color: #04FDFF;
+  color: #04fdff;
 }
 
 p {
@@ -193,4 +195,31 @@ a {
 .page-fade-in-transition {
   opacity: 0;
   transition: opacity 1s ease-in-out;
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.074em;
+  }
+  h2 {
+    font-size: 1.528em;
+  }
+  h3 {
+    font-size: 1.44em;
+  }
+  h4 {
+    font-size: 1.2em;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+
+  .in-page-nav {
+    font-size: 1.5rem;
+  }
+
+  .shared-wrapping {
+    max-width: 750px;
+  }
 }
