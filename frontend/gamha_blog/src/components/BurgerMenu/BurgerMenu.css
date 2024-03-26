@@ -21,7 +21,7 @@
 }
 
 .burger-menu-nav-item {
-    margin: 1rem 0;
+    padding: 1rem 0;
     font-size: 3rem;
     font-weight: 400;
     font-style: normal;
@@ -36,3 +36,20 @@
 .hidden {
   transform: translate3d(-40vw, 0, 0);
 }
+
+/* TABLET */
+@media (min-width: 768px) {
+  .burger-menu-nav-item {
+    padding: 2rem 0;
+  }
+
+  .page-nav {
+    font-size: 2rem; /* Reset the font size for tablet devices */
+  }
+
+  .hidden {
+    transform: translate3d(-40vw, 0, 0); /* Reset the translateX value for tablet devices */
+  }
+}
+
+

@@ -7,7 +7,8 @@ import "./Footer.css";
 const Footer = () => {
   
   return (
-    <footer>
+    <footer >
+      <div className="footer-wrapping">
       <div className="scroll-to-top">
         <img 
           src={backToTop} 
@@ -28,6 +29,7 @@ const Footer = () => {
       </div>
       <div className="copyright">
         <p>© Damon Pickett 2024</p>
+      </div>
       </div>
     </footer>
   );
