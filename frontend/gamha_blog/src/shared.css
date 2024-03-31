@@ -134,7 +134,6 @@ p {
 }
 
 a {
-  font-family: "Poppins", sans-serif;
   color: #f8fb04;
   text-decoration: none;
   font-weight: 500;
@@ -163,8 +162,9 @@ a {
   margin-bottom: 1rem;
 }
 
+/* burger menu component and navbar component */
 .page-nav {
-  font-family: "MedievalSharp", system-ui;
+  font-family: "Special Elite", system-ui;
   font-weight: 400;
   font-style: normal;
   font-size: 1.3rem;
@@ -221,5 +221,17 @@ a {
 
   .shared-wrapping {
     max-width: 750px;
+  }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1024px) {
+  .shared-wrapping {
+    max-width: 900px;
+  }
+
+  /* burger menu component and navbar component */
+  .page-nav {
+    font-size: 1.2rem;
   }
 }

@@ -45,3 +45,10 @@ footer {
 .copyright p {
   font-family: "Special Elite", system-ui;
 }
+
+/* DESKTOP */
+@media screen and (min-width: 1024px) {
+  .footer-wrapping {
+    max-width: 900px;
+  }
+}

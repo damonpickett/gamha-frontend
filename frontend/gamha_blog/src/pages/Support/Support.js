@@ -11,9 +11,9 @@ const Support = () => {
   }, []);
 
   return (
-    <div className="page-fade-in-transition shared-wrapping">
+    <div className="page-fade-in-transition shared-wrapping shared-padding">
       <h1>Support</h1>
-      <p>This is the Support component.</p>
+      <p>If you like my work, please consider supporting me on ko-fi. </p>
     </div>
   );
 };

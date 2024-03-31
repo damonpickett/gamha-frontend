@@ -43,7 +43,7 @@
     padding: 2rem 0;
   }
 
-  .page-nav {
+  .burger-menu-nav-item a {
     font-size: 2rem; /* Reset the font size for tablet devices */
   }
 
