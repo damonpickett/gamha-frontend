@@ -9,7 +9,8 @@ const BurgerMenu = (props) => {
         <ul className='burger-menu-nav'>
           <li className='burger-menu-nav-item'><Link className='page-nav' to="/">Home</Link></li>
           <li className='burger-menu-nav-item'><Link className='page-nav' to="/bloglist">Blog List</Link></li>
-          <li className='burger-menu-nav-item'><Link className='page-nav' to="/support">Support</Link></li>
+          <li className='burger-menu-nav-item'><Link className='page-nav' to="/podcast">Podcast</Link></li>
+          <li className='burger-menu-nav-item'><Link className='page-nav' to="/books">Books</Link></li>
         </ul>
       </nav>
     </div>

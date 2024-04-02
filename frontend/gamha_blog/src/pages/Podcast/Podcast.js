@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import "./Support.css";
+import "./Podcast.css";
 
-const Support = () => {
+const Podcast = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -12,10 +12,10 @@ const Support = () => {
 
   return (
     <div className="page-fade-in-transition shared-wrapping shared-padding">
-      <h1>Support</h1>
-      <p>If you like my work, please consider supporting me on ko-fi. </p>
+      <h1>Podcast</h1>
+      <p>If you'd like to support my work, sign up for a paid subscription to the relaxing, meditative experience that is my podcast. </p>
     </div>
   );
 };
 
-export default Support;
+export default Podcast;

@@ -3,9 +3,29 @@
 }
 
 .jumbotron {
+  position: relative;
+  display: inline-block;
+}
+
+.jumbotron img {
+  width: 100vw;
+  height: auto;
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.jumbotron .overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* black with opacity */
+  box-sizing: border-box; /* to include padding in width/height */
   text-align: center;
-  /* border: #22fb00 1px solid; */
-  padding: 2rem 0;
+  padding-top: 1rem;
 }
 
 .tagline {
@@ -18,15 +38,16 @@
 }
 
 @keyframes glow {
-    0% {
-      text-shadow: 0 0 30px #22fb00;
-    }
-    50% {
-      text-shadow: 0 0 150px #ffffff, 0 0 200px #ffffff, 0 0 250px #ffffff, 0 0 300px #890685;
-    }
-    100% {
-      text-shadow: 0 0 30px #22fb00;
-    }
+  0% {
+    text-shadow: 0 0 30px #22fb00;
+  }
+  50% {
+    text-shadow: 0 0 150px #ffffff, 0 0 200px #ffffff, 0 0 250px #ffffff,
+      0 0 300px #890685;
+  }
+  100% {
+    text-shadow: 0 0 30px #22fb00;
+  }
 }
 
 .author {
@@ -41,8 +62,8 @@
 }
 
 .page-break {
-    /* border: #22fb00 1px solid; */
-    padding: 2rem 0.5rem;
+  /* border: #22fb00 1px solid; */
+  padding: 2rem 0.5rem;
 }
 
 .page-break h2 {
@@ -57,6 +78,11 @@
 
 /* TABLET */
 @media (min-width: 768px) {
+  .jumbotron .overlay-text {
+    padding-top: 5rem;
+  }
+
+
   .tagline {
     font-size: 2.5rem;
   }
@@ -79,5 +105,27 @@
 
   .date {
     font-size: 1rem;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .tagline {
+    font-size: 3rem;
+  }
+}
+
+/* REAL BIG DESKTOP */
+@media (min-width: 1500px) {
+  .jumbotron .overlay-text {
+    padding-top: 15rem;
+  }
+
+  .tagline {
+    font-size: 5rem;
+  }
+
+  .author {
+    font-size: 2rem;
   }
 }

@@ -34,8 +34,13 @@ const Navbar = (props) => {
               </Link>
             </li>
             <li className="nav-links-item">
-              <Link className="page-nav" to="/support">
-                Support
+              <Link className="page-nav" to="/podcast">
+                Podcast
+              </Link>
+            </li>
+            <li className="nav-links-item">
+              <Link className="page-nav" to="/books">
+                Books
               </Link>
             </li>
           </ul>

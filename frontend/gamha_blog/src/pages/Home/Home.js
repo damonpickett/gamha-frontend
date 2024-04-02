@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
+import banner from "../../assets/images/home-page-banner-1280x720.jpg";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -31,8 +32,11 @@ const Home = () => {
   return (
     <div className="home-page page-fade-in-transition">
       <div className="jumbotron">
-        <h1 className="tagline">God, Dreams, Intuition, and Psychedelics</h1>
-        <h2 className="author">A Blog by Damon Pickett</h2>
+        <img src={banner} alt="Banner" />
+        <div className="overlay-text">
+          <h1 className="tagline">God, Dreams, Intuition, and Psychedelics</h1>
+          <h2 className="author">A Blog by Damon Pickett</h2>
+        </div>
       </div>
       <div className="shared-wrapping">
         <div className="blog-preview">
