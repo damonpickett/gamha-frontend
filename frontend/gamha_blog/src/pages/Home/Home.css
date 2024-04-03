@@ -4,28 +4,31 @@
 
 .jumbotron {
   position: relative;
-  display: inline-block;
-}
-
-.jumbotron img {
   width: 100vw;
-  height: auto;
-  display: block;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: url('../../assets/images/home-page-banner-1280x720.jpg') no-repeat center center fixed; 
+  background-size: cover;
 }
 
-.jumbotron .overlay-text {
+.jumbotron::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* black with opacity */
-  box-sizing: border-box; /* to include padding in width/height */
+  background: rgba(0, 0, 0, 0.5); 
+}
+
+.overlay-text {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  padding-top: 1rem;
 }
 
 .tagline {

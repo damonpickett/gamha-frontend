@@ -32,12 +32,12 @@ const Home = () => {
   return (
     <div className="home-page page-fade-in-transition">
       <div className="jumbotron">
-        <img src={banner} alt="Banner" />
         <div className="overlay-text">
           <h1 className="tagline">God, Dreams, Intuition, and Psychedelics</h1>
           <h2 className="author">A Blog by Damon Pickett</h2>
         </div>
       </div>
+
       <div className="shared-wrapping">
         <div className="blog-preview">
           <div className="shared-title">

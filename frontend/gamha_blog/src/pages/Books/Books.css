@@ -1,0 +1,11 @@
+.banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    background-size: cover;
+    z-index: -1;
+    /* background: url('../../assets/images/books-page-1280x720.jpg') no-repeat center center fixed; */
+  }
+
