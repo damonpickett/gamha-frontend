@@ -1,11 +1,33 @@
 .banner {
-    position: fixed;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: url("../../assets/images/books-page-1280x720.jpg") no-repeat
+    center center fixed;
+  background-size: cover;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: auto;
-    background-size: cover;
-    z-index: -1;
-    /* background: url('../../assets/images/books-page-1280x720.jpg') no-repeat center center fixed; */
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+  }
+  
+  .overlay-text {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
 
+  .overlay-text h1 {
+    font-size: 2.1rem;
+  }
