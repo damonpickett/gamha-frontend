@@ -20,7 +20,7 @@
     background: rgba(0, 0, 0, 0.5); 
   }
   
-  .overlay-text {
+  .books-overlay-text {
     position: absolute;
     top: 25%;
     left: 50%;
@@ -28,6 +28,8 @@
     text-align: center;
   }
 
-  .overlay-text h1 {
-    font-size: 2.1rem;
+  .books-overlay-text h1 {
+    font-size: 4rem;
   }
+
+  

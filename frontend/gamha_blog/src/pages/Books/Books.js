@@ -25,16 +25,22 @@ const Books = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="page-fade-in-transition">
       <div className="banner">
-        <div className="overlay-text">
+        <div className="books-overlay-text">
           <h1>Books</h1>
         </div>
       </div>
 
       <div className="books-content shared-wrapping shared-padding">
-        <h1>Books</h1>
+        <div className="shared-title">
+          <h1>Books</h1>
+        </div>
 
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac eros

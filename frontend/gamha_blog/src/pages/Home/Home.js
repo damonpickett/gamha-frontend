@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
-import banner from "../../assets/images/home-page-banner-1280x720.jpg";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -27,6 +26,10 @@ const Home = () => {
       document.querySelector(".page-fade-in-transition").style.opacity = 1;
     }, 100);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
 
   return (
@@ -56,7 +59,7 @@ const Home = () => {
           <h2>Or start here...</h2>
         </div>
         {post ? (
-          <div className="blog-post shared-padding">
+          <div className="blog-post">
             <div className="shared-title">
               <h1>{post.title}</h1>
               <h2>{post.subtitle}</h2>

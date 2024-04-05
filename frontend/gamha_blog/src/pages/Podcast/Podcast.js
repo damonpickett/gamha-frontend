@@ -9,16 +9,21 @@ const Podcast = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="page-fade-in-transition">
       <div className="podcast-ad-banner">
         <div className="podcast-overlay-text">
           <h1>The GAMHA Podcast</h1>
           <h2>With Damon Pickett</h2>
-          <p>New episodes every Sunday evening</p>
+          <p>New episode every Sunday evening</p>
+          <button className="subscribe-button">Subscribe</button>
         </div>
       </div>
-      <div className="podcast-content">
+      <div className="podcast-content shared-padding shared-wrapping">
         <p>
           If you'd like to support my work, sign up for a paid subscription to
           the relaxing, meditative experience that is my podcast.

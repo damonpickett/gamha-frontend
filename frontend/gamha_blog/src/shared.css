@@ -1,5 +1,8 @@
 /* FONTS */
-@import url("https://fonts.googleapis.com/css2?family=Anta&family=MedievalSharp&family=Poppins:wght@300;400;500&family=Special+Elite&family=Spectral+SC:wght@300;400;500;600&family=Spinnaker&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Anta&family=MedievalSharp&family=Poppins:wght@300;400;500&family=Special+Elite&family=Spectral+SC:wght@300;400;500;600&family=Spinnaker&display=swap"); */
+/* @import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&family=Poppins:wght@300;400;500&family=Special+Elite&family=Spectral+SC:wght@300;400;500;600&family=Spinnaker&family=Bellefair&display=swap");
+
 
 @font-face {
   font-family: "Alien League";
@@ -76,9 +79,9 @@
   font-style: normal;
 }
 
-/* Anta */
-.anta-regular {
-  font-family: "Anta", sans-serif;
+/* Bellefair */
+.bellefair-regular {
+  font-family: "Bellefair", serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -118,8 +121,11 @@ h1 {
   color: #22fb00;
   font-weight: 300;
   font-style: normal;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   line-height: 1.6rem;
+  /* glow effect without animation */
+  text-shadow: 0 0 30px #22fb00;
+
 }
 
 h2 {
@@ -137,7 +143,7 @@ a {
   color: #f8fb04;
   text-decoration: none;
   font-weight: 500;
-  font-style: normal;
+  font-family: "Bellefair", serif;
 }
 
 .shared-wrapping {
@@ -155,7 +161,7 @@ a {
 }
 
 .shared-padding {
-  padding: 0.5rem;
+  padding: 2rem 0.5rem 0.5rem;
 }
 
 .shared-margin-bottom {
@@ -178,10 +184,11 @@ a {
 }
 
 .in-page-nav {
-  font-family: "Anta", sans-serif;
+  font-family: "Bellefair", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1.3rem;
+  text-transform: uppercase;
 }
 
 .inherit-style {
