@@ -11,3 +11,12 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['originally_published']
+
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+    cover_image = models.ImageField(upload_to='book_covers/')
+    amazon_link = models.URLField(max_length=200)
+    order = models.PositiveIntegerField(default=0, blank=False, null=False)
+
+    class Meta:
+        ordering = ['order']

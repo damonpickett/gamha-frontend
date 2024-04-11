@@ -32,4 +32,9 @@
     font-size: 4rem;
   }
 
+  .book-grid {
+    display: grid;
+    
+  }
+
   
