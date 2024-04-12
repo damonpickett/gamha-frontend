@@ -29,7 +29,7 @@ const Books = () => {
 
   return (
     <div className="page-fade-in-transition">
-      <div className="banner">
+      <div className="books-banner">
         <div className="books-overlay-text">
           <h1>Books</h1>
         </div>

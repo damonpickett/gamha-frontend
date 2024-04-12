@@ -146,6 +146,10 @@ a {
   font-family: "Bellefair", serif;
 }
 
+.none {
+  display: none;
+}
+
 .shared-wrapping {
   max-width: 900px;
   margin: 0 auto;

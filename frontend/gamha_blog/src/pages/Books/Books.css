@@ -1,16 +1,16 @@
-.banner {
+.books-banner {
   position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   margin: 0;
   padding: 0;
-  background: url("../../assets/images/books-page-1280x720.jpg") no-repeat
+  background: url("../../assets/images/books-page-creature-2-1157x720.jpg") no-repeat
     center center fixed;
   background-size: cover;
 }
 
-.banner::before {
+.books-banner::before {
   content: "";
   position: absolute;
   top: 0;
