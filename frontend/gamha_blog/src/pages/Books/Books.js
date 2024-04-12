@@ -36,18 +36,20 @@ const Books = () => {
       </div>
 
       <div className="books-content shared-wrapping shared-padding">
-        {books.map((book) => (
-          <div key={book.id}>
-            <a
-              key={book.id}
-              href={book.amazon_link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={book.cover_image} alt={book.title} />
-            </a>
-          </div>
-        ))}
+        <div className="book-grid">
+          {books.map((book) => (
+            <div className='book-grid-item'key={book.id}>
+              <a
+                key={book.id}
+                href={book.amazon_link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img className='book-cover' src={book.cover_image} alt={book.title} />
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
