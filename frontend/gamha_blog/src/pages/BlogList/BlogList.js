@@ -25,9 +25,14 @@ const BlogList = () => {
   }, []);
 
   return (
-    <div className="blog-list-page page-fade-in-transition shared-wrapping">
+    <div className="blog-list-page page-fade-in-transition">
+      <div className="blog-list-banner">
+        <div className="blog-list-overlay-text">
+          <h1 className="blog-list-h1">Blog List</h1>
+        </div>
+      </div>
       {list.map((post) => (
-        <div key={post.id} className="blog-preview shared-padding">
+        <div key={post.id} className="blog-preview shared-padding shared-wrapping">
           <div className="shared-title">
             <h1>
               <Link className="inherit-style" to={`/blogpost/${post.id}`}>

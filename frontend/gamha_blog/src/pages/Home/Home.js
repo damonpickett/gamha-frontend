@@ -37,7 +37,7 @@ const Home = () => {
       <div className="jumbotron">
         <div className="overlay-text">
           <h1 className="tagline">God, Dreams, Intuition, and Psychedelics</h1>
-          <h2 className="author">A Blog by Damon Pickett</h2>
+          <h2 className="author">A Blog by Damon Andrew</h2>
         </div>
       </div>
 
@@ -47,7 +47,7 @@ const Home = () => {
             <h1>What brought you here?</h1>
           </div>
           <div className="shared-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>There are over 1 billion websites, but you find yourself here. How did that happen? Was it an accident? Are you in the wrong place? Or do we have an affinity? The world got so crazy I couldn’t maintain sanity believing that matter was all that mattered. I came to this place when I opened myself to the possibility that there was more to life than what my five senses were reporting. If that’s where you’re at, then I invite you to go a little deeper…</p>
           </div>
           <div className="in-page-nav-section">
             <Link className="in-page-nav" to="/bloglist">
