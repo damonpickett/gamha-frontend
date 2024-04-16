@@ -114,6 +114,7 @@ h4 {
 body {
   background-color: #000;
   color: white;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -143,7 +144,12 @@ a {
   color: #f8fb04;
   text-decoration: none;
   font-weight: 500;
-  font-family: "Bellefair", serif;
+}
+
+a:hover {
+  color: #f8fb04;
+  text-shadow: 0 0 10px #f8fb04;
+  transition: text-shadow 0.3s ease-in-out;
 }
 
 .none {
@@ -181,6 +187,11 @@ a {
   color: #fff;
 }
 
+.page-nav:hover {
+  color: inherit;
+  text-shadow: inherit;
+}
+
 .blog-post-nav-section {
   margin: 1rem 0;
   display: flex;
@@ -201,6 +212,11 @@ a {
   font-style: inherit;
   font-size: inherit;
   color: inherit;
+}
+
+.inherit-style:hover {
+  color: inherit;
+  text-shadow: inherit;
 }
 
 .page-fade-in-transition {

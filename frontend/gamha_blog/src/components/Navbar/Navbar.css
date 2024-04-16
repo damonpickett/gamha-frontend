@@ -32,6 +32,11 @@ nav {
   font-family: inherit;
 }
 
+.site-title-link:hover {
+  color: inherit;
+  text-shadow: inherit;
+}
+
 .menu-btn {
   transition: all 0.5s ease-in-out;
   width: 3.5rem;

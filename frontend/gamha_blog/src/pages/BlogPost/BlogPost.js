@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import ancientMatriarch from "../../assets/images/blog-posts/ancient-matriarch-750x552.jpg";
 import "./BlogPost.css";
 
 function BlogPost() {
@@ -57,7 +58,10 @@ function BlogPost() {
             <h1>{post.title}</h1>
             <h2>{post.subtitle}</h2>
           </div>
-          <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+          <div className="blog-post-image">
+            {/* <img src={ancientMatriarch} alt="Ancient Matriarch" /> */}
+          </div>
+          <div className='blog-content' dangerouslySetInnerHTML={{ __html: post.content }}></div>
           <p className="date">
             Originally Published: {post.originally_published.split("T")[0]}
           </p>

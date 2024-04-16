@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Support.css";
 
 const Support = () => {
@@ -22,7 +23,7 @@ const Support = () => {
       </div>
 
       <div className="support-content shared-wrapping shared-padding">
-        <p>I would really appreciate a small donation to help pay the costs of running this website. And if I’m fortunate enough to have that covered, could you help me buy some groceries?</p>
+        <p>I would really appreciate a small donation to help pay the costs of running this website. You can also support my work by purchasing a book through my <Link to="/books">books page</Link>.</p>
       </div>
     </div>
   );

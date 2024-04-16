@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import ancientMatriarch from "../../assets/images/blog-posts/ancient-matriarch-750x552.jpg";
 import "./Home.css";
 
 const Home = () => {

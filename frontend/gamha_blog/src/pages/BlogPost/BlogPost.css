@@ -14,3 +14,12 @@
   .blog-post-fade-in {
     animation: fadeIn 1s ease-in-out;
   }
+
+.blog-post-image img {
+  width: 100%;
+  height: auto;
+}
+
+/* .blog-content {
+  padding-top: 1rem;
+} */
