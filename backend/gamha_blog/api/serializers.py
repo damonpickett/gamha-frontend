@@ -4,7 +4,7 @@ from .models import Post, Book
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ['id', 'title', 'subtitle', 'content', 'blurb', 'originally_published', 'last_updated']
+        fields = ['id', 'title', 'subtitle', 'content', 'blurb', 'originally_published', 'last_updated', 'post_cover']
 
 class BookSerializer(serializers.ModelSerializer):
     class Meta:

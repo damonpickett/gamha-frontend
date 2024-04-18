@@ -65,6 +65,9 @@ const Home = () => {
               <h1>{post.title}</h1>
               <h2>{post.subtitle}</h2>
             </div>
+            <div className="blog-post-image">
+              <img src={post.post_cover} alt="Ancient Matriarch" />
+            </div>
             <div
               className="shared-content"
               dangerouslySetInnerHTML={{ __html: post.content }}

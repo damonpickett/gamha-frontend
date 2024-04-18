@@ -8,6 +8,7 @@ class Post(models.Model):
     blurb = models.TextField(blank=True)
     originally_published = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
+    post_cover = models.ImageField(upload_to='post_covers/', blank=True, null=True)
 
     class Meta:
         ordering = ['originally_published']

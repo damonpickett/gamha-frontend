@@ -41,7 +41,12 @@ const BlogList = () => {
             </h1>
             <h2>{post.subtitle}</h2>
           </div>
+          <div className="blog-post-image">
+          <img src={post.post_cover} alt={post.title} />
+          </div>
+          <div className="blog-blurb">
           <p>{post.blurb}</p>
+          </div>
           <Link to={`/blogpost/${post.id}`}>Read More</Link>
         </div>
       ))}

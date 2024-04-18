@@ -59,7 +59,7 @@ function BlogPost() {
             <h2>{post.subtitle}</h2>
           </div>
           <div className="blog-post-image">
-            {/* <img src={ancientMatriarch} alt="Ancient Matriarch" /> */}
+            <img src={post.post_cover} alt={post.title} />
           </div>
           <div className='blog-content' dangerouslySetInnerHTML={{ __html: post.content }}></div>
           <p className="date">
