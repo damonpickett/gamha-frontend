@@ -13,13 +13,10 @@ const BlogList = () => {
       .catch((error) => console.error(error));
   }, []);
 
-  
-    
-
   useEffect(() => {
     window.scrollTo(0, 0);
     const timer = setTimeout(() => {
-      document.querySelector('.page-fade-in-transition').style.opacity = 1;
+      document.querySelector(".page-fade-in-transition").style.opacity = 1;
     }, 200);
     return () => clearTimeout(timer);
   }, []);
@@ -32,7 +29,10 @@ const BlogList = () => {
         </div>
       </div>
       {list.map((post) => (
-        <div key={post.id} className="blog-preview shared-padding shared-wrapping">
+        <div
+          key={post.id}
+          className="blog-preview shared-padding shared-wrapping"
+        >
           <div className="shared-title">
             <h1>
               <Link className="inherit-style" to={`/blogpost/${post.id}`}>
@@ -42,10 +42,10 @@ const BlogList = () => {
             <h2>{post.subtitle}</h2>
           </div>
           <div className="blog-post-image">
-          <img src={post.post_cover} alt={post.title} />
+            <img src={post.post_cover} alt={post.title} />
           </div>
           <div className="blog-blurb">
-          <p>{post.blurb}</p>
+            <p>{post.blurb}</p>
           </div>
           <Link to={`/blogpost/${post.id}`}>Read More</Link>
         </div>

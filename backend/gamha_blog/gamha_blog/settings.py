@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+from google.oauth2 import service_account
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "django_ckeditor_5",
     "corsheaders",
+    "storages",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -138,6 +140,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
+
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+GS_BUCKET_NAME = 'gamha-bucket'
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    os.getenv('GAMHA_GOOGLE_APPLICATION_CREDENTIALS')
+)
+
 
 customColorPalette = [
     {
