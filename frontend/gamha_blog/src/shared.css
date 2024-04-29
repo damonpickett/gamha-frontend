@@ -1,0 +1,265 @@
+/* FONTS */
+/* @import url("https://fonts.googleapis.com/css2?family=Anta&family=MedievalSharp&family=Poppins:wght@300;400;500&family=Special+Elite&family=Spectral+SC:wght@300;400;500;600&family=Spinnaker&display=swap"); */
+/* @import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&family=Poppins:wght@300;400;500&family=Special+Elite&family=Spectral+SC:wght@300;400;500;600&family=Spinnaker&family=Bellefair&display=swap");
+
+
+@font-face {
+  font-family: "Alien League";
+  src: url("./fonts/alien_league/alienleaguebold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url("./fonts/sf-mono-font/SF-Mono-Regular.ttf") format("truetype");
+}
+
+/* Spinnaker */
+.spinnaker-regular {
+  font-family: "Spinnaker", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Spectral SC */
+.spectral-sc-light {
+  font-family: "Spectral SC", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.spectral-sc-regular {
+  font-family: "Spectral SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.spectral-sc-medium {
+  font-family: "Spectral SC", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.spectral-sc-semibold {
+  font-family: "Spectral SC", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Poppins */
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Special Elite */
+.special-elite-regular {
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Medieval Sharp */
+.medieval-sharp-regular {
+  font-family: "MedievalSharp", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Bellefair */
+.bellefair-regular {
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* MOBILE */
+
+/* BASE STYLES */
+html {
+  font-size: 100%;
+}
+h1 {
+  font-size: 2.074em;
+}
+h2 {
+  font-size: 1.728em;
+}
+h3 {
+  font-size: 1.44em;
+}
+h4 {
+  font-size: 1.2em;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000;
+  color: white;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: "Alien League";
+  color: #22fb00;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.7rem;
+  line-height: 1.6rem;
+  /* glow effect without animation */
+  text-shadow: 0 0 30px #22fb00;
+
+}
+
+h2 {
+  font-family: "Spectral SC", serif;
+  font-size: 1rem;
+  color: #04fdff;
+}
+
+p {
+  font-family: "Spinnaker", sans-serif;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #f8fb04;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #f8fb04;
+  text-shadow: 0 0 10px #f8fb04;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.none {
+  display: none;
+}
+
+.shared-wrapping {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.shared-title {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.shared-content {
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.shared-padding {
+  padding: 2rem 0.5rem 0.5rem;
+}
+
+.shared-margin-bottom {
+  margin-bottom: 1rem;
+}
+
+/* burger menu component and navbar component */
+.page-nav {
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.page-nav:hover {
+  color: inherit;
+  text-shadow: inherit;
+}
+
+.blog-post-nav-section {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.in-page-nav {
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+
+.inherit-style {
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+.inherit-style:hover {
+  color: inherit;
+  text-shadow: inherit;
+}
+
+.page-fade-in-transition {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.074em;
+  }
+  h2 {
+    font-size: 1.528em;
+  }
+  h3 {
+    font-size: 1.44em;
+  }
+  h4 {
+    font-size: 1.2em;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+
+  .in-page-nav {
+    font-size: 1.5rem;
+  }
+
+  .shared-wrapping {
+    max-width: 750px;
+  }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1024px) {
+  .shared-wrapping {
+    max-width: 900px;
+  }
+
+  /* burger menu component and navbar component */
+  .page-nav {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,54 @@
+footer {
+  border-top: 1px solid #fff;
+}
+
+.footer-wrapping {
+  max-width: 750px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.scroll-to-top {
+  position: absolute;
+  top: 1.5rem;
+  right: 0.2rem;
+  background-color: #000;
+  color: #fff;
+  padding: 0.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.scroll-to-top img {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.social-media {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+  width: 15rem;
+  margin: 0 auto;
+}
+
+.social-media img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.copyright p {
+  font-family: "Special Elite", system-ui;
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1024px) {
+  .footer-wrapping {
+    max-width: 900px;
+  }
+}

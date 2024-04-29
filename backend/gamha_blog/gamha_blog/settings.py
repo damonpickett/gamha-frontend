@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+from google.oauth2 import service_account
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -35,7 +36,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "api",
     "rest_framework",
-    "ckeditor",
+    "django_ckeditor_5",
+    "corsheaders",
+    "storages",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -45,6 +48,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -52,6 +56,10 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+]
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
 ]
 
 ROOT_URLCONF = "gamha_blog.urls"
@@ -124,19 +132,113 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Additional locations of static files
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+GS_BUCKET_NAME = 'gamha-bucket'
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    os.getenv('GAMHA_GOOGLE_APPLICATION_CREDENTIALS')
+)
+
+
+customColorPalette = [
+    {
+        'color': 'hsl(4, 90%, 58%)',
+        'label': 'Red'
+    },
+    {
+        'color': 'hsl(340, 82%, 52%)',
+        'label': 'Pink'
+    },
+    {
+        'color': 'hsl(291, 64%, 42%)',
+        'label': 'Purple'
+    },
+    {
+        'color': 'hsl(262, 52%, 47%)',
+        'label': 'Deep Purple'
+    },
+    {
+        'color': 'hsl(231, 48%, 48%)',
+        'label': 'Indigo'
+    },
+    {
+        'color': 'hsl(207, 90%, 54%)',
+        'label': 'Blue'
+    },
+]
+
+# CKEDITOR_5_CUSTOM_CSS = 'path_to.css'  optional
+# CKEDITOR_5_FILE_STORAGE = "path_to_storage.CustomStorage"  optional
+CKEDITOR_5_CONFIGS = {
+'default': {
+    'toolbar': ['heading', '|', 'bold', 'italic', 'link',
+                'bulletedList', 'numberedList', 'blockQuote', 'imageUpload', ],
+
+},
+'extends': {
+    'blockToolbar': [
+        'paragraph', 'heading1', 'heading2', 'heading3',
+        '|',
+        'bulletedList', 'numberedList',
+        '|',
+        'blockQuote',
+    ],
+    'toolbar': ['heading', '|', 'outdent', 'indent', '|', 'bold', 'italic', 'link', 'underline', 'strikethrough',
+    'code','subscript', 'superscript', 'highlight', '|', 'codeBlock', 'sourceEditing', 'insertImage',
+                'bulletedList', 'numberedList', 'todoList', '|',  'blockQuote', 'imageUpload', '|',
+                'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'mediaEmbed', 'removeFormat',
+                'insertTable',],
+    'image': {
+        'toolbar': ['imageTextAlternative', '|', 'imageStyle:alignLeft',
+                    'imageStyle:alignRight', 'imageStyle:alignCenter', 'imageStyle:side',  '|'],
+        'styles': [
+            'full',
+            'side',
+            'alignLeft',
+            'alignRight',
+            'alignCenter',
+        ]
+
+    },
+    'table': {
+        'contentToolbar': [ 'tableColumn', 'tableRow', 'mergeTableCells',
+        'tableProperties', 'tableCellProperties' ],
+        'tableProperties': {
+            'borderColors': customColorPalette,
+            'backgroundColors': customColorPalette
+        },
+        'tableCellProperties': {
+            'borderColors': customColorPalette,
+            'backgroundColors': customColorPalette
+        }
+    },
+    'heading' : {
+        'options': [
+            { 'model': 'paragraph', 'title': 'Paragraph', 'class': 'ck-heading_paragraph' },
+            { 'model': 'heading1', 'view': 'h1', 'title': 'Heading 1', 'class': 'ck-heading_heading1' },
+            { 'model': 'heading2', 'view': 'h2', 'title': 'Heading 2', 'class': 'ck-heading_heading2' },
+            { 'model': 'heading3', 'view': 'h3', 'title': 'Heading 3', 'class': 'ck-heading_heading3' }
+        ]
+    }
+},
+'list': {
+    'properties': {
+        'styles': 'true',
+        'startIndex': 'true',
+        'reversed': 'true',
+    }
+}
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'Custom',  # Customize the toolbar as per your requirements
-        'height': 300,  # Set the height of the editor
-        'width': 800,   # Set the width of the editor
-    },
-}
-

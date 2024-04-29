@@ -27,6 +27,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.env
 
 # Ignore log files
 *.log
@@ -34,3 +35,18 @@
 # Ignore OS generated files
 .DS_Store
 Thumbs.db
+
+migrate-to-postgres-guide.md
+chatgpt-guide.md
+notes.md
+react-blog-guide.md
+css-best-practices.md
+google-app-engine-upload.md
+
+package-lock.json
+yarn.lock
+react-blog-guide.md
+
+fonts
+
+migrations
