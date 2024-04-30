@@ -14,6 +14,10 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 from google.oauth2 import service_account
+from google.cloud import secretmanager
+import json
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -141,12 +145,22 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
+# Images
 DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 GS_BUCKET_NAME = 'gamha-bucket'
-GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
-    os.getenv('GAMHA_GOOGLE_APPLICATION_CREDENTIALS')
-)
 
+def get_secret(project_id, secret_id):
+    client = secretmanager.SecretManagerServiceClient()
+    secret_name = f"projects/{project_id}/secrets/{secret_id}/versions/latest"
+    response = client.access_secret_version(request={"name": secret_name})
+    keyfile_path = response.payload.data.decode('UTF-8')
+    print(f"KEYFILE PATH: {keyfile_path}")
+    with open(keyfile_path) as keyfile:
+        keyfile_dict = json.load(keyfile)
+    credentials = service_account.Credentials.from_service_account_info(keyfile_dict)
+    return credentials
+
+GS_CREDENTIALS = get_secret(os.getenv('PROJECT_ID'), os.getenv('SECRET_ID'))
 
 customColorPalette = [
     {
