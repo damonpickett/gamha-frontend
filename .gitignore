@@ -1,56 +1,18 @@
-# Ignore Django related files and directories
-/backend/venv/
-/backend/db.sqlite3
-/backend/__pycache__/
-/backend/*.pyc
-/backend/.env
+# dependencies
+/node_modules
 
-# Ignore Node.js related files and directories
-/frontend/node_modules/
-/frontend/.eslintcache
-/frontend/.env
-/frontend/build/
+# testing
+/coverage
 
-# Ignore any compiled files
-*.pyc
-*.pyo
-*.pyd
-*.class
+# production
+/build
 
-# Ignore editor/IDE files
-.vscode/
-.idea/
-*.swp
-
-# Ignore environment-specific files
+# misc
+.DS_Store
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-.env
-
-# Ignore log files
-*.log
-
-# Ignore OS generated files
-.DS_Store
-Thumbs.db
-
-migrate-to-postgres-guide.md
-chatgpt-guide.md
-notes.md
-react-blog-guide.md
-css-best-practices.md
-google-app-engine-upload.md
-
-package-lock.json
-yarn.lock
-react-blog-guide.md
-
-fonts
-
-migrations
-
-app.yaml
-
-requirements.txt
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
