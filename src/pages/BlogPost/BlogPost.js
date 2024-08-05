@@ -46,6 +46,8 @@ function BlogPost() {
     window.scrollTo(0, 0);
   }, [previousPost, nextPost]);
 
+  
+
   return (
     <div className="page-fade-in-transition shared-wrapping">
       {post ? (
