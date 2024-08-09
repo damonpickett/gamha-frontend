@@ -13,7 +13,7 @@ const Home = () => {
       .get("http://localhost:8000/api/posts/")
       .then((response) => {
         setPosts(response.data);
-        const currentPost = response.data.find((p) => p.id === 3);
+        const currentPost = response.data.find((p) => p.id === 1);
         setPost(currentPost);
       })
       .catch((error) => console.error(error));
