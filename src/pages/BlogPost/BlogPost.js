@@ -38,6 +38,8 @@ function BlogPost() {
       .catch((error) => console.error(error));
   }, [id]);
 
+  
+
   const currentIndex = posts.findIndex((p) => p.id === post?.id);
   const previousPost = posts[currentIndex - 1];
   const nextPost = posts[currentIndex + 1];
@@ -45,6 +47,7 @@ function BlogPost() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [previousPost, nextPost]);
+
 
   return (
     <div className="page-fade-in-transition shared-wrapping">
