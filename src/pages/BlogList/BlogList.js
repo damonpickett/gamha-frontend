@@ -7,8 +7,9 @@ const BlogList = () => {
   const [list, setList] = useState([]);
 
   useEffect(() => {
+    const apiUrl = process.env.REACT_APP_API_URL;
     axios
-      .get("http://localhost:8000/api/posts/")
+      .get(`${apiUrl}/api/posts/`)
       .then((response) => setList(response.data))
       .catch((error) => console.error(error));
   }, []);
