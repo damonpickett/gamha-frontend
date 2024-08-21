@@ -6,8 +6,9 @@ const Books = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
+    const apiUrl = process.env.REACT_APP_API_URL;
     axios
-      .get("http://localhost:8000/api/books/")
+      .get(`${apiUrl}/api/books/`)
       .then((response) => {
         setBooks(response.data);
       })

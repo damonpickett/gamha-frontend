@@ -19,24 +19,26 @@ function BlogPost() {
   }, [id]);
 
   useEffect(() => {
-    const page = document.querySelector(".page-fade-in-transition");
-    // Reset the opacity to 0 every time a new post is loaded
-    page.style.opacity = 0;
-
-    axios
-      .get("http://localhost:8000/api/posts/")
-      .then((response) => {
-        setPosts(response.data);
-        const currentPost = response.data.find((p) => p.id === parseInt(id));
-        setPost(currentPost);
-
-        // Apply the fade-in effect after the new post data has been fetched
-        requestAnimationFrame(() => {
-          page.style.opacity = 1;
-        });
-      })
-      .catch((error) => console.error(error));
-  }, [id]);
+      const page = document.querySelector(".page-fade-in-transition");
+      // Reset the opacity to 0 every time a new post is loaded
+      page.style.opacity = 0;
+  
+      const apiUrl = process.env.REACT_APP_API_URL;
+  
+      axios
+        .get(`${apiUrl}/api/posts/`)
+        .then((response) => {
+          setPosts(response.data);
+          const currentPost = response.data.find((p) => p.id === parseInt(id));
+          setPost(currentPost);
+  
+          // Apply the fade-in effect after the new post data has been fetched
+          requestAnimationFrame(() => {
+            page.style.opacity = 1;
+          });
+        })
+        .catch((error) => console.error(error));
+    }, [id]);
 
   
 
