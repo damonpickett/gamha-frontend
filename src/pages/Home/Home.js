@@ -13,28 +13,19 @@ const Home = () => {
     axios
       .get(`${apiUrl}/api/posts/`)
       .then((response) => {
-        console.log("API Response Data:", response.data); // Log the response data
         setPosts(response.data);
         const currentPost = response.data.find((p) => p.id === 1);
-        console.log("Current Post:", currentPost); // Log the current post
         setPost(currentPost);
       })
       .catch((error) => console.error(error));
   }, []);
-
-  useEffect(() => {
-    console.log("Posts State:", posts); // Log the posts state
-    console.log("Post State:", post); // Log the post state
-  }, [posts, post]);
 
   let currentIndex = -1;
   let nextPost = null;
   
   if (posts.length > 0 && post) {
     currentIndex = posts.findIndex((p) => p.id === post.id);
-    console.log("Current Index:", currentIndex); // Log the current index
     nextPost = posts[currentIndex + 1];
-    console.log("Next Post:", nextPost); // Log the next post
   }
 
   useEffect(() => {
