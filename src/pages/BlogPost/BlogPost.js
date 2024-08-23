@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import ancientMatriarch from "../../assets/images/blog-posts/ancient-matriarch-750x552.jpg";
 import "./BlogPost.css";
 
 function BlogPost() {
-  
   const [posts, setPosts] = useState([]);
   const [post, setPost] = useState(null);
   const [fadeIn, setFadeIn] = useState(false);
@@ -14,33 +12,34 @@ function BlogPost() {
 
   useEffect(() => {
     setFadeIn(true);
-    const timer = setTimeout(() => setFadeIn(false), 1000); // Adjust the timeout to match your CSS animation duration
+    const timer = setTimeout(() => setFadeIn(false), 1000);
     return () => clearTimeout(timer);
   }, [id]);
 
   useEffect(() => {
-      const page = document.querySelector(".page-fade-in-transition");
-      // Reset the opacity to 0 every time a new post is loaded
-      page.style.opacity = 0;
-  
-      const apiUrl = process.env.REACT_APP_API_URL;
-  
-      axios
-        .get(`${apiUrl}/api/posts/`)
-        .then((response) => {
-          setPosts(response.data);
-          const currentPost = response.data.find((p) => p.id === parseInt(id));
-          setPost(currentPost);
-  
-          // Apply the fade-in effect after the new post data has been fetched
-          requestAnimationFrame(() => {
-            page.style.opacity = 1;
-          });
-        })
-        .catch((error) => console.error(error));
-    }, [id]);
+    const page = document.querySelector(".page-fade-in-transition");
+    // Reset the opacity to 0 every time a new post is loaded
+    page.style.opacity = 0;
 
-  
+    // Clear the post state to prevent displaying the old content
+    setPost(null);
+
+    const apiUrl = process.env.REACT_APP_API_URL;
+
+    axios
+      .get(`${apiUrl}/api/posts/`)
+      .then((response) => {
+        setPosts(response.data);
+        const currentPost = response.data.find((p) => p.id === parseInt(id));
+        setPost(currentPost);
+
+        // Apply the fade-in effect after the new post data has been fetched
+        requestAnimationFrame(() => {
+          page.style.opacity = 1;
+        });
+      })
+      .catch((error) => console.error(error));
+  }, [id]);
 
   const currentIndex = posts.findIndex((p) => p.id === post?.id);
   const previousPost = posts[currentIndex - 1];
@@ -50,15 +49,10 @@ function BlogPost() {
     window.scrollTo(0, 0);
   }, [previousPost, nextPost]);
 
-
   return (
     <div className="page-fade-in-transition shared-wrapping">
       {post ? (
-        <div
-          className={`blog-post ${
-            fadeIn ? "blog-post-fade-in" : ""
-          }`}
-        >
+        <div className={`blog-post ${fadeIn ? "blog-post-fade-in" : ""}`}>
           <div className="shared-title">
             <h1>{post.title}</h1>
             <h2>{post.subtitle}</h2>
@@ -66,7 +60,7 @@ function BlogPost() {
           <div className="blog-post-image">
             <img src={post.post_cover} alt={post.title} />
           </div>
-          <div className='blog-content' dangerouslySetInnerHTML={{ __html: post.content }}></div>
+          <div className="blog-content" dangerouslySetInnerHTML={{ __html: post.content }}></div>
           <p className="date">
             Originally Published: {post.originally_published.split("T")[0]}
           </p>
@@ -84,7 +78,7 @@ function BlogPost() {
           </div>
         </div>
       ) : (
-        <div>Loading...</div>
+        <div></div>
       )}
     </div>
   );
