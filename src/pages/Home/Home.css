@@ -40,6 +40,12 @@
   /* animation: glow 2s ease-in-out infinite; */
 }
 
+@media (max-width: 768px) {
+  .jumbotron {
+    background-size: contain;
+  }
+}
+
 @keyframes glow {
   0% {
     text-shadow: 0 0 30px #22fb00;
