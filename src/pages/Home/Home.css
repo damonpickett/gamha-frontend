@@ -43,6 +43,7 @@
 @media (max-width: 768px) {
   .jumbotron {
     background-size: contain;
+    background-position: center top;
   }
 }
 
