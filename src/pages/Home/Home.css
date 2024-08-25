@@ -9,7 +9,7 @@
   overflow: hidden;
   margin: 0;
   padding: 0;
-  background: url('../../assets/images/home-page-banner-1280x720.jpg') no-repeat center center fixed; 
+  background: url('../../assets/images/home-page-banner-1280x720.jpg') no-repeat center center; 
   background-size: cover;
 }
 
@@ -38,13 +38,6 @@
   margin-bottom: 0.5rem;
   line-height: normal;
   /* animation: glow 2s ease-in-out infinite; */
-}
-
-@media (max-width: 768px) {
-  .jumbotron {
-    background-size: contain;
-    background-position: center top;
-  }
 }
 
 @keyframes glow {
