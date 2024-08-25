@@ -10,6 +10,13 @@
   background-size: cover;
 }
 
+@media (max-width: 768px) {
+  .books-banner {
+    background: url("../../assets/images/books-page-creature-2-1157x720.jpg") no-repeat
+      center center;
+  }
+}
+
 .books-banner::before {
   content: "";
   position: absolute;

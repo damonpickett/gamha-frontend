@@ -10,6 +10,13 @@
   background-size: cover;
 }
 
+@media (max-width: 768px) {
+  .podcast-ad-banner {
+    background: url("../../assets/images/podcast-banner-1280x866.jpg") no-repeat
+      center center;
+  }
+}
+
 .podcast-ad-banner::before {
   content: "";
   position: absolute;
