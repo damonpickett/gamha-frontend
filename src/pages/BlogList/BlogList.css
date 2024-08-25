@@ -10,6 +10,13 @@
   background-size: cover;
 }
 
+@media (max-width: 768px) {
+  .blog-list-banner {
+    background: url("../../assets/images/bloglist-banner-1280x720.jpg") no-repeat
+      center center;
+  }
+}
+
 .blog-list-banner::before {
   content: "";
   position: absolute;
