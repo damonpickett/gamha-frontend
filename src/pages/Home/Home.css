@@ -9,8 +9,15 @@
   overflow: hidden;
   margin: 0;
   padding: 0;
-  background: url('../../assets/images/home-page-banner-1280x720.jpg') no-repeat center center; 
+  background: url('../../assets/images/home-page-banner-1280x720.jpg') no-repeat center center fixed; 
   background-size: cover;
+}
+
+/* media query */
+@media (max-width: 768px) {
+  .jumbotron {
+    background: url('../../assets/images/home-page-banner-750x422.jpg') no-repeat center center fixed; 
+  }
 }
 
 .jumbotron::before {
