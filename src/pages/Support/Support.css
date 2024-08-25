@@ -9,6 +9,13 @@
       center center fixed;
     background-size: cover;
   }
+
+  @media (max-width: 768px) {
+    .support-banner {
+      background: url("../../assets/images/support-page-banner-1280x720.jpg") no-repeat
+        center center;
+    }
+  }
   
   .support-banner::before {
     content: "";
