@@ -5,13 +5,20 @@ import "./BlogList.css";
 
 const BlogList = () => {
   const [list, setList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const apiUrl = process.env.REACT_APP_API_URL;
     axios
       .get(`${apiUrl}/api/posts/`)
-      .then((response) => setList(response.data))
-      .catch((error) => console.error(error));
+      .then((response) => {
+        setList(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoading(false);
+      });
   }, []);
 
   useEffect(() => {
@@ -23,7 +30,7 @@ const BlogList = () => {
   }, []);
 
   return (
-    <div className="blog-list-page page-fade-in-transition">
+    <div className={`blog-list-page page-fade-in-transition ${loading ? 'loading' : ''}`}>
       <div className="blog-list-banner">
         <div className="blog-list-overlay-text">
           <h1 className="blog-list-h1">Blog List</h1>
