@@ -4,6 +4,7 @@ import "./Books.css";
 
 const Books = () => {
   const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const apiUrl = process.env.REACT_APP_API_URL;
@@ -11,9 +12,11 @@ const Books = () => {
       .get(`${apiUrl}/api/books/`)
       .then((response) => {
         setBooks(response.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.error("There was an error!", error);
+        setLoading(false);
       });
   }, []);
 
@@ -29,7 +32,7 @@ const Books = () => {
   }, []);
 
   return (
-    <div className="page-fade-in-transition">
+    <div className={`page-fade-in-transition ${loading ? 'loading' : ''}`}>
       <div className="books-banner">
         <div className="books-overlay-text">
           <h1>Books</h1>
