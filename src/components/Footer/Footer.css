@@ -44,11 +44,8 @@ footer {
 }
 
 .footer-button:hover {
-  background-color: #156109; 
-}
-
-.copyright {
-  text-align: center;
+  background-color: #156109;
+  color: #fff;
 }
 
 .copyright p {
@@ -56,6 +53,90 @@ footer {
   margin: 0 0;
   font-size: 0.7rem;
 }
+
+/* share modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: #fff;
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+  width: 18.75rem;
+  text-align: center;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2);
+  color:#000;
+}
+
+.modal-content h3 {
+  font-family: "Alien League";
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-bottom: 1.25rem;
+}
+
+.modal-button {
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: #22fb00;
+  border-radius: 0.3125rem;
+  transition: background-color 0.3s ease;
+  font-family: "Special Elite", system-ui;
+  color: #000;
+}
+
+.modal-button:hover {
+  background-color: #156109;
+  color: #fff;
+}
+
+.clipboard-button {
+  margin-bottom: 1.25rem;
+}
+
+.close-button {
+  padding: 0.3125rem 0.625rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: none;
+  background-color: #ccc;
+  border-radius: 0.3125rem;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #aaa;
+}
+
 
 /* DESKTOP */
 @media screen and (min-width: 1024px) {
