@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "../../shared.css";
 import "./Footer.css";
+import instagram from "../../assets/icons/ig-48.svg";
+import x from "../../assets/icons/x-48.svg";
+import whatsapp from "../../assets/icons/whatsapp-48.svg";
+import fb from "../../assets/icons/fb-48.svg";
+import reddit from "../../assets/icons/reddit-48.svg";
 
 const Footer = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -49,6 +54,19 @@ const Footer = () => {
     window.open(`https://wa.me/?text=${text}%20${url}`, "_blank");
   };
 
+  const shareOnFacebook = () => {
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+  };
+  
+
+  const shareOnReddit = () => {
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(document.title);
+    window.open(`https://www.reddit.com/submit?url=${url}&title=${title}`, '_blank');
+  };
+  
+
   return (
     <>
       <footer>
@@ -74,31 +92,35 @@ const Footer = () => {
 
       {isModalOpen && (
         <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content">
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-button" onClick={closeModal}>
+              X
+            </button>
             <h3>Share this page</h3>
             <div className="modal-buttons">
-              <button className="modal-button" onClick={shareOnX}>
-                Share to X
-              </button>
-              <button className="modal-button" onClick={shareOnWhatsApp}>
-                Share to WhatsApp
-              </button>
+              <img src={x} alt="x" onClick={shareOnWhatsApp} />
+
+              <img src={whatsapp} alt="whatsapp" onClick={shareOnWhatsApp} />
+
+              {/* <img src={fb} alt="fb" onClick={shareOnFacebook} /> */}
+
+              <img src={reddit} alt="reddit" onClick={shareOnReddit} />
             </div>
-            <h3>Follow me</h3>
+            <h3>Connect</h3>
             <div className="modal-buttons">
-              <a
-                href="https://www.instagram.com/gamhawords/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <button className="modal-button">Follow on Instagram</button>
-              </a>
               <a
                 href="https://x.com/gamhawords"
                 target="_blank"
                 rel="noreferrer"
               >
-                <button className="modal-button">Follow on X</button>
+                <img src={x} alt="x" />
+              </a>
+              <a
+                href="https://www.instagram.com/gamhawords/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={instagram} alt="instagram" />
               </a>
             </div>
             <button
