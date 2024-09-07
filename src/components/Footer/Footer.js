@@ -98,7 +98,7 @@ const Footer = () => {
             </button>
             <h3>Share this page</h3>
             <div className="modal-buttons">
-              <img src={x} alt="x" onClick={shareOnWhatsApp} />
+              <img src={x} alt="x" onClick={shareOnX} />
 
               <img src={whatsapp} alt="whatsapp" onClick={shareOnWhatsApp} />
 
