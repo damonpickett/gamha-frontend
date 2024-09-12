@@ -49,22 +49,6 @@ const Home = () => {
       </div>
 
       <div className="shared-wrapping">
-        <div className="blog-preview">
-          <div className="shared-title">
-            <h1>What brought you here?</h1>
-          </div>
-          <div className="shared-content">
-            <p>There are over 1 billion websites, but you find yourself here. How did that happen? Was it an accident? Are you in the wrong place? Or do we have an affinity? The world got so crazy I couldn’t maintain sanity believing that matter was all that mattered. I came to this place when I opened myself to the possibility that there was more to life than what my five senses were reporting. If that’s where you’re at, then I invite you to go a little deeper…</p>
-          </div>
-          <div className="in-page-nav-section">
-            <Link className="in-page-nav" to="/bloglist">
-              Enter
-            </Link>
-          </div>
-        </div>
-        <div className="page-break shared-padding">
-          <h2>Or start here...</h2>
-        </div>
         {post ? (
           <div className="blog-post">
             <div className="shared-title">
