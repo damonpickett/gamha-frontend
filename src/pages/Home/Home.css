@@ -66,11 +66,6 @@
   color: #ffffff;
 }
 
-.blog-preview {
-  /* border: #22fb00 1px solid; */
-  padding: 2rem 0.5rem;
-}
-
 .page-break {
   /* border: #22fb00 1px solid; */
   padding: 2rem 0.5rem;
@@ -99,10 +94,6 @@
 
   .author {
     font-size: 1.5rem;
-  }
-
-  .blog-preview {
-    padding: 2rem 1rem;
   }
 
   .page-break {

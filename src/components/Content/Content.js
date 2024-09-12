@@ -16,7 +16,6 @@ const Content = () => {
         <Route path='/bloglist' element={<BlogList />} />
         <Route path='/blogpost/:id' element={<BlogPost />} />
         <Route path='/podcast' element={<Podcast />} />
-        <Route path='/support' element={<Support />} />
         <Route path='/books' element={<Books />} />
       </Routes>
     </div>
