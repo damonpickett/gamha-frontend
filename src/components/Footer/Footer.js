@@ -8,7 +8,7 @@ import fb from "../../assets/icons/fb-48.svg";
 import reddit from "../../assets/icons/reddit-48.svg";
 
 const Footer = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isShareModalOpen, setShareModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,12 +26,12 @@ const Footer = () => {
     };
   }, []);
 
-  const openModal = () => {
-    setModalOpen(true);
+  const openShareModal = () => {
+    setShareModalOpen(true);
   };
 
-  const closeModal = () => {
-    setModalOpen(false);
+  const closeShareModal = () => {
+    setShareModalOpen(false);
   };
 
   const copyToClipboard = () => {
@@ -58,14 +58,12 @@ const Footer = () => {
     const url = encodeURIComponent(window.location.href);
     window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
   };
-  
 
   const shareOnReddit = () => {
     const url = encodeURIComponent(window.location.href);
     const title = encodeURIComponent(document.title);
     window.open(`https://www.reddit.com/submit?url=${url}&title=${title}`, '_blank');
   };
-  
 
   return (
     <>
@@ -79,7 +77,7 @@ const Footer = () => {
             >
               <button className="footer-button">Support</button>
             </a>
-            <button className="footer-button" onClick={openModal}>
+            <button className="footer-button" onClick={openShareModal}>
               Share
             </button>
             <button className="footer-button none">Subscribe</button>
@@ -90,20 +88,17 @@ const Footer = () => {
         </div>
       </footer>
 
-      {isModalOpen && (
-        <div className="modal-overlay" onClick={closeModal}>
+      {isShareModalOpen && (
+        <div className="modal-overlay" onClick={closeShareModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-button" onClick={closeModal}>
+            <button className="close-button" onClick={closeShareModal}>
               X
             </button>
             <h3>Share this page</h3>
             <div className="modal-buttons">
               <img src={x} alt="x" onClick={shareOnX} />
-
               <img src={whatsapp} alt="whatsapp" onClick={shareOnWhatsApp} />
-
               {/* <img src={fb} alt="fb" onClick={shareOnFacebook} /> */}
-
               <img src={reddit} alt="reddit" onClick={shareOnReddit} />
             </div>
             <h3>Connect</h3>
