@@ -42,8 +42,9 @@ function BlogPost() {
   }, [id]);
 
   const currentIndex = posts.findIndex((p) => p.id === post?.id);
-  const previousPost = posts[currentIndex - 1];
-  const nextPost = posts[currentIndex + 1];
+  console.log(currentIndex);
+  const previousPost = posts[currentIndex + 1];
+  const nextPost = posts[currentIndex - 1];
 
   useEffect(() => {
     window.scrollTo(0, 0);

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import ancientMatriarch from "../../assets/images/blog-posts/ancient-matriarch-750x552.jpg";
 import "./Home.css";
 
 const Home = () => {
@@ -25,7 +24,7 @@ const Home = () => {
   
   if (posts.length > 0 && post) {
     currentIndex = posts.findIndex((p) => p.id === post.id);
-    nextPost = posts[currentIndex + 1];
+    nextPost = posts[currentIndex - 1];
   }
 
   useEffect(() => {
