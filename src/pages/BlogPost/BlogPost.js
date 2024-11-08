@@ -65,6 +65,9 @@ function BlogPost() {
           <p className="date">
             Originally Published: {post.originally_published.split("T")[0]}
           </p>
+          <p className="date">
+            Last Updated: {post.last_updated.split("T")[0]}
+          </p>
           <div className="blog-post-nav-section">
             {previousPost && (
               <Link className="in-page-nav" to={`/blogpost/${previousPost.id}`}>
