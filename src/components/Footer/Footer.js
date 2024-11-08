@@ -92,7 +92,7 @@ const Footer = () => {
   const handleSubscribe = async (e) => {
     e.preventDefault();
     const baseUrl = process.env.NODE_ENV === "production" 
-      ? "https://gamha-blog-a5a35bdb1d4a.herokuapp.com/" 
+      ? "https://gamha-blog-a5a35bdb1d4a.herokuapp.com" 
       : "http://localhost:8000";
     try {
       const response = await axios.post(`${baseUrl}/subscribe/`, {
