@@ -141,6 +141,8 @@ footer {
   transition: background-color 0.3s ease;
   font-family: "Special Elite", system-ui;
   color: #000;
+  border: 0.1rem solid black;
+  margin-bottom: 1.25rem;
 }
 
 .modal-button:hover {
@@ -151,6 +153,23 @@ footer {
 .clipboard-button {
   margin-bottom: 1.25rem;
   border: 0.1rem solid black;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 0.625rem;
+  border: 0.1rem solid black;
+  border-radius: 0.3125rem;
+  margin-bottom: 1.25rem;
+}
+
+.subscribe-message {
+  min-height: 1.5rem;
+}
+
+.subscribe-message p {
+  
+  
 }
 
 

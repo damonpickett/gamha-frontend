@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "../../shared.css";
 import "./Footer.css";
 import instagram from "../../assets/icons/ig-48.svg";
@@ -9,6 +10,9 @@ import reddit from "../../assets/icons/reddit-48.svg";
 
 const Footer = () => {
   const [isShareModalOpen, setShareModalOpen] = useState(false);
+  const [isSubscribeModalOpen, setSubscribeModalOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +30,7 @@ const Footer = () => {
     };
   }, []);
 
+  // Share Modal
   const openShareModal = () => {
     setShareModalOpen(true);
   };
@@ -56,13 +61,46 @@ const Footer = () => {
 
   const shareOnFacebook = () => {
     const url = encodeURIComponent(window.location.href);
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+    window.open(
+      `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+      "_blank"
+    );
   };
 
   const shareOnReddit = () => {
     const url = encodeURIComponent(window.location.href);
     const title = encodeURIComponent(document.title);
-    window.open(`https://www.reddit.com/submit?url=${url}&title=${title}`, '_blank');
+    window.open(
+      `https://www.reddit.com/submit?url=${url}&title=${title}`,
+      "_blank"
+    );
+  };
+
+  // Subscribe Modal
+  const openSubscribeModal = () => {
+    setSubscribeModalOpen(true);
+  };
+
+  const closeSubscribeModal = () => {
+    setSubscribeModalOpen(false);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:8000/subscribe/", {
+        email,
+      });
+      setMessage(response.data.message);
+      setEmail("");
+    } catch (error) {
+      setMessage("Failed to subscribe");
+      console.error("Error subscribing:", error);
+    }
   };
 
   return (
@@ -80,10 +118,12 @@ const Footer = () => {
             <button className="footer-button" onClick={openShareModal}>
               Share
             </button>
-            <button className="footer-button none">Subscribe</button>
+            <button className="footer-button" onClick={openSubscribeModal}>
+              Subscribe
+            </button>
           </div>
           <div className="copyright">
-            <p>© Damon Andrew 2024</p>
+            <p>© Damon Andrew {new Date().getFullYear()}</p>
           </div>
         </div>
       </footer>
@@ -124,6 +164,34 @@ const Footer = () => {
             >
               Copy URL to Clipboard
             </button>
+          </div>
+        </div>
+      )}
+
+      {isSubscribeModalOpen && (
+        <div className="modal-overlay" onClick={closeSubscribeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-button" onClick={closeSubscribeModal}>
+              X
+            </button>
+            <h3>Subscribe</h3>
+            <p>...if you want to be notified of new releases</p>
+            <form onSubmit={handleSubscribe}>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                required
+                className="modal-input"
+                value={email}
+                onChange={handleEmailChange}
+              />
+              <button type="submit" className="modal-button">
+                Subscribe
+              </button>
+            </form>
+            <div className="subscribe-message">
+              {message && <p>{message}</p>}
+            </div>
           </div>
         </div>
       )}
