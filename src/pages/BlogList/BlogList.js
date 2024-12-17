@@ -55,7 +55,7 @@ const BlogList = () => {
             <img src={post.post_cover} alt={post.title} />
           </div>
           <div className="blog-blurb">
-            <p>{post.blurb}</p>
+            <p className="blurb">{post.blurb}</p>
           </div>
           <Link to={`/blogpost/${post.id}`}>Read More</Link>
         </div>
