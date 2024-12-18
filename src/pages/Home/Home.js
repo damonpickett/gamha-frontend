@@ -12,20 +12,13 @@ const Home = () => {
     axios
       .get(`${apiUrl}/api/posts/`)
       .then((response) => {
-        setPosts(response.data);
-        const currentPost = response.data.find((p) => p.id === 1);
-        setPost(currentPost);
+        const posts = response.data;
+        const mostRecentPost = posts.reduce((max, post) => (post.id > max.id ? post : max), posts[0]);
+        setPosts(posts);
+        setPost(mostRecentPost);
       })
       .catch((error) => console.error(error));
   }, []);
-
-  let currentIndex = -1;
-  let nextPost = null;
-  
-  if (posts.length > 0 && post) {
-    currentIndex = posts.findIndex((p) => p.id === post.id);
-    nextPost = posts[currentIndex - 1];
-  }
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -65,13 +58,8 @@ const Home = () => {
               Originally Published: {post.originally_published.split("T")[0]}
             </p>
             <div className="blog-post-nav-section">
-              {nextPost && (
-                <Link className="in-page-nav" to={`/blogpost/${nextPost.id}`}>
-                  Next
-                </Link>
-              )}
               <Link className="in-page-nav" to="/bloglist">
-                All
+                See All
               </Link>
             </div>
           </div>
