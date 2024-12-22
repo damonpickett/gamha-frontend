@@ -13,6 +13,7 @@ const BlogList = () => {
       .get(`${apiUrl}/api/posts/`)
       .then((response) => {
         setList(response.data);
+        console.log(response.data)
         setLoading(false);
       })
       .catch((error) => {
@@ -20,8 +21,6 @@ const BlogList = () => {
         setLoading(false);
       });
   }, []);
-
-  
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -45,7 +44,7 @@ const BlogList = () => {
         >
           <div className="shared-title">
             <h1>
-              <Link className="inherit-style" to={`/blogpost/${post.id}`}>
+              <Link to={`/blogpost/${post.id}`}>
                 {post.title}
               </Link>
             </h1>
