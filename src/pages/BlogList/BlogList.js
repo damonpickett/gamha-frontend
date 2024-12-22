@@ -44,7 +44,7 @@ const BlogList = () => {
         >
           <div className="shared-title">
             <h1>
-              <Link to={`/blogpost/${post.id}`}>
+              <Link className="inherit-style" to={`/blogpost/${post.id}`}>
                 {post.title}
               </Link>
             </h1>
