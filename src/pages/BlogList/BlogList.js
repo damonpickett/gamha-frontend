@@ -12,7 +12,7 @@ const BlogList = () => {
     axios
       .get(`${apiUrl}/api/posts/`)
       .then((response) => {
-        setList(response.data);
+        setList(response.data.results);
         setLoading(false);
       })
       .catch((error) => {

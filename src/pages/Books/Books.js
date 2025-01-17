@@ -11,7 +11,7 @@ const Books = () => {
     axios
       .get(`${apiUrl}/api/books/`)
       .then((response) => {
-        setBooks(response.data);
+        setBooks(response.data.results);
         setLoading(false);
       })
       .catch((error) => {
