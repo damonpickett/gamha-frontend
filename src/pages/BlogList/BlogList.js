@@ -21,8 +21,6 @@ const BlogList = () => {
       });
   }, []);
 
-  
-
   useEffect(() => {
     window.scrollTo(0, 0);
     const timer = setTimeout(() => {
