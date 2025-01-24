@@ -29,8 +29,10 @@ function BlogPost() {
     axios
       .get(`${apiUrl}/api/posts/`)
       .then((response) => {
-        setPosts(response.data);
-        const currentPost = response.data.find((p) => p.id === parseInt(id));
+        console.log("RESPONSE DATA:",response.data);
+        const posts = response.data.results;
+        setPosts(posts);
+        const currentPost = posts.find((p) => p.id === parseInt(id));
         setPost(currentPost);
 
         // Apply the fade-in effect after the new post data has been fetched
@@ -42,7 +44,6 @@ function BlogPost() {
   }, [id]);
 
   const currentIndex = posts.findIndex((p) => p.id === post?.id);
-  console.log(currentIndex);
   const previousPost = posts[currentIndex + 1];
   const nextPost = posts[currentIndex - 1];
 
