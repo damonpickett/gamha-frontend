@@ -6,19 +6,29 @@ import "./BlogList.css";
 const BlogList = () => {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [nextPage, setNextPage] = useState(null);
+  const [prevPage, setPrevPage] = useState(null);
 
-  useEffect(() => {
-    const apiUrl = process.env.REACT_APP_API_URL;
+  const fetchPosts = (url) => {
+    setLoading(true);
     axios
-      .get(`${apiUrl}/api/posts/`)
+      .get(url)
       .then((response) => {
+        console.log("RESPONSE DATA:", response.data);
         setList(response.data.results);
+        setNextPage(response.data.next);
+        setPrevPage(response.data.previous);
         setLoading(false);
       })
       .catch((error) => {
         console.error(error);
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    const apiUrl = process.env.REACT_APP_API_URL;
+    fetchPosts(`${apiUrl}/api/posts/`);
   }, []);
 
   useEffect(() => {
@@ -58,6 +68,18 @@ const BlogList = () => {
           <Link to={`/blogpost/${post.id}`}>Read More</Link>
         </div>
       ))}
+      <div className="pagination">
+        {prevPage && (
+          <button onClick={() => fetchPosts(prevPage)} disabled={loading}>
+            Previous
+          </button>
+        )}
+        {nextPage && (
+          <button onClick={() => fetchPosts(nextPage)} disabled={loading}>
+            Next
+          </button>
+        )}
+      </div>
     </div>
   );
 };
