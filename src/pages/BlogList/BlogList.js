@@ -40,7 +40,11 @@ const BlogList = () => {
   }, []);
 
   return (
-    <div className={`blog-list-page page-fade-in-transition ${loading ? 'loading' : ''}`}>
+    <div
+      className={`blog-list-page page-fade-in-transition ${
+        loading ? "loading" : ""
+      }`}
+    >
       <div className="blog-list-banner">
         <div className="blog-list-overlay-text">
           <h1 className="blog-list-h1">Blog List</h1>
@@ -70,14 +74,18 @@ const BlogList = () => {
       ))}
       <div className="pagination">
         {prevPage && (
-          <button onClick={() => fetchPosts(prevPage)} disabled={loading}>
-            Previous
-          </button>
+          <button
+            className="mystic-arrow prev"
+            onClick={() => fetchPosts(prevPage)}
+            disabled={loading}
+          ></button>
         )}
         {nextPage && (
-          <button onClick={() => fetchPosts(nextPage)} disabled={loading}>
-            Next
-          </button>
+          <button
+            className="mystic-arrow next"
+            onClick={() => fetchPosts(nextPage)}
+            disabled={loading}
+          ></button>
         )}
       </div>
     </div>
