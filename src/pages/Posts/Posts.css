@@ -43,3 +43,32 @@
 .blurb {
   padding-top: 1rem;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.5em;
+}
+
+.page-number {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  margin: 0 1rem;
+  cursor: pointer;
+  color: #999900; /* Dim color for inactive buttons */
+  transition: color 0.3s, text-shadow 0.3s;
+  font-family: "Bellefair", serif;
+}
+
+.page-number.active {
+  color: #f8fb04; /* Active button color */
+  text-shadow: 0 0 10px #f8fb04; /* Glow effect */
+}
+
+.page-number:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

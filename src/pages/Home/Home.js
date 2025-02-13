@@ -12,10 +12,15 @@ const Home = () => {
     axios
       .get(`${apiUrl}/api/posts/`)
       .then((response) => {
-        const posts = response.data;
-        const mostRecentPost = posts.reduce((max, post) => (post.id > max.id ? post : max), posts[0]);
-        setPosts(posts);
-        setPost(mostRecentPost);
+        const posts = response.data.results; // Use response.data.results
+        if (posts && posts.length > 0) {
+          const mostRecentPost = posts.reduce(
+            (max, post) => (post.id > max.id ? post : max),
+            posts[0]
+          );
+          setPosts(posts);
+          setPost(mostRecentPost);
+        }
       })
       .catch((error) => console.error(error));
   }, []);
@@ -35,7 +40,9 @@ const Home = () => {
     <div className="home-page page-fade-in-transition">
       <div className="jumbotron">
         <div className="overlay-text">
-          <h1 className="tagline">God, Dreams, Consciousness, and Psychedelics</h1>
+          <h1 className="tagline">
+            God, Dreams, Consciousness, and Psychedelics
+          </h1>
           <h2 className="author">A Blog by Damon Andrew</h2>
         </div>
       </div>
