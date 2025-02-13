@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "./BlogList.css";
+import "./Posts.css";
 
-const BlogList = () => {
+const Posts = () => {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [count, setCount] = useState(0);
@@ -55,7 +55,7 @@ const BlogList = () => {
     >
       <div className="blog-list-banner">
         <div className="blog-list-overlay-text">
-          <h1 className="blog-list-h1">Blog List</h1>
+          <h1 className="blog-list-h1">Posts</h1>
         </div>
       </div>
       {list.map((post) => (
@@ -96,4 +96,4 @@ const BlogList = () => {
   );
 };
 
-export default BlogList;
+export default Posts;
