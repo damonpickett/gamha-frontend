@@ -6,8 +6,9 @@ import "./BlogList.css";
 const BlogList = () => {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [nextPage, setNextPage] = useState(null);
-  const [prevPage, setPrevPage] = useState(null);
+  const [count, setCount] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 10; // Adjust this value based on your pagination settings
 
   const fetchPosts = (url) => {
     setLoading(true);
@@ -16,8 +17,7 @@ const BlogList = () => {
       .then((response) => {
         console.log("RESPONSE DATA:", response.data);
         setList(response.data.results);
-        setNextPage(response.data.next);
-        setPrevPage(response.data.previous);
+        setCount(response.data.count);
         setLoading(false);
       })
       .catch((error) => {
@@ -38,6 +38,14 @@ const BlogList = () => {
     }, 200);
     return () => clearTimeout(timer);
   }, []);
+
+  const handlePageClick = (pageNumber) => {
+    const apiUrl = process.env.REACT_APP_API_URL;
+    fetchPosts(`${apiUrl}/api/posts/?page=${pageNumber}`);
+    setCurrentPage(pageNumber);
+  };
+
+  const totalPages = Math.ceil(count / postsPerPage);
 
   return (
     <div
@@ -73,20 +81,16 @@ const BlogList = () => {
         </div>
       ))}
       <div className="pagination">
-        {prevPage && (
+        {Array.from({ length: totalPages }, (_, index) => (
           <button
-            className="mystic-arrow prev"
-            onClick={() => fetchPosts(prevPage)}
+            key={index + 1}
+            className={`page-number ${currentPage === index + 1 ? "active" : ""}`}
+            onClick={() => handlePageClick(index + 1)}
             disabled={loading}
-          ></button>
-        )}
-        {nextPage && (
-          <button
-            className="mystic-arrow next"
-            onClick={() => fetchPosts(nextPage)}
-            disabled={loading}
-          ></button>
-        )}
+          >
+            {index + 1}
+          </button>
+        ))}
       </div>
     </div>
   );
