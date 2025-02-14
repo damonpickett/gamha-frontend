@@ -12,6 +12,7 @@ const Home = () => {
       .get(`${apiUrl}/api/posts/`)
       .then((response) => {
         const posts = response.data.results; // Use response.data.results
+        console.log("RESPONSE DATA:", response.data);
         console.log("POSTS:", posts);
         if (posts && posts.length > 0) {
           const mostRecentPost = posts.reduce(
