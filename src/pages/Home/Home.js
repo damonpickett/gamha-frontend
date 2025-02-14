@@ -4,7 +4,6 @@ import axios from "axios";
 import "./Home.css";
 
 const Home = () => {
-  
   const [post, setPost] = useState(null);
 
   useEffect(() => {
@@ -12,14 +11,13 @@ const Home = () => {
     axios
       .get(`${apiUrl}/api/posts/`)
       .then((response) => {
-        console.log("API URL:", apiUrl);
         const posts = response.data.results; // Use response.data.results
+        console.log("POSTS:", posts);
         if (posts && posts.length > 0) {
           const mostRecentPost = posts.reduce(
             (max, post) => (post.id > max.id ? post : max),
             posts[0]
           );
-          
           setPost(mostRecentPost);
         }
       })
