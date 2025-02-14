@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Home.css";
 
 const Home = () => {
-  const [posts, setPosts] = useState([]);
+  
   const [post, setPost] = useState(null);
 
   useEffect(() => {
@@ -12,13 +12,14 @@ const Home = () => {
     axios
       .get(`${apiUrl}/api/posts/`)
       .then((response) => {
+        console.log("API URL:", apiUrl);
         const posts = response.data.results; // Use response.data.results
         if (posts && posts.length > 0) {
           const mostRecentPost = posts.reduce(
             (max, post) => (post.id > max.id ? post : max),
             posts[0]
           );
-          setPosts(posts);
+          
           setPost(mostRecentPost);
         }
       })
@@ -65,7 +66,7 @@ const Home = () => {
               Originally Published: {post.originally_published.split("T")[0]}
             </p>
             <div className="blog-post-nav-section">
-              <Link className="in-page-nav" to="/bloglist">
+              <Link className="in-page-nav" to="/posts">
                 See All
               </Link>
             </div>

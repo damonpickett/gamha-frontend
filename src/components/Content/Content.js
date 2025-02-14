@@ -5,7 +5,6 @@ import Home from '../../pages/Home/Home';
 import Posts from '../../pages/Posts/Posts';
 import BlogPost from '../../pages/BlogPost/BlogPost';
 import Podcast from '../../pages/Podcast/Podcast';
-import Support from '../../pages/Support/Support';
 import Books from '../../pages/Books/Books';
 
 const Content = () => {
