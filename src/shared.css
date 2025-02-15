@@ -225,6 +225,10 @@ a:hover {
   transition: opacity 1s ease-in-out;
 }
 
+.page-fade-in-transition.fade-in {
+  opacity: 1;
+}
+
 .page-fade-in-transition.loading {
   opacity: 0;
 }

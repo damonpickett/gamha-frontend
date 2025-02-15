@@ -15,7 +15,6 @@ const Posts = () => {
     axios
       .get(url)
       .then((response) => {
-        console.log("RESPONSE DATA:", response.data);
         setList(response.data.results);
         setCount(response.data.count);
         setLoading(false);
