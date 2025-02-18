@@ -18,6 +18,7 @@ const Posts = () => {
         setList(response.data.results);
         setCount(response.data.count);
         setLoading(false);
+        console.log("Response Data:", response.data);
       })
       .catch((error) => {
         console.error(error);
@@ -45,6 +46,7 @@ const Posts = () => {
   };
 
   const totalPages = Math.ceil(count / postsPerPage);
+
 
   return (
     <div
