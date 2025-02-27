@@ -41,9 +41,9 @@ const Home = () => {
       <div className="jumbotron">
         <div className="overlay-text">
           <h1 className="tagline">
-            God, Dreams, Consciousness, and Psychedelics
+            God, The Ancient Matriarch, and The Haunting Aliens
           </h1>
-          <h2 className="author">A Blog by Damon Andrew</h2>
+          <h2 className="author">The Blog of Damon Andrew</h2>
         </div>
       </div>
 
