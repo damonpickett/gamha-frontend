@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import logo from "../../assets/icons/DA-logo.png";
 
 const Navbar = (props) => {
   return (
     <nav>
       <div className="navbar-spacing">
         <div className="site-title">
-          <h1>
+          
             <Link className="site-title-link" to="/">
-              GAMHA
+              <img className="site-logo" src={logo} alt="Damon Andrew Logo" />
             </Link>
-          </h1>
+          
         </div>
         <div className="nav-links">
           {/* burger menu for mobile and tablets */}
