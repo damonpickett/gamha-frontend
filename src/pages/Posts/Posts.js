@@ -41,6 +41,10 @@ const Posts = () => {
   const totalPages = Math.ceil(count / postsPerPage);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (firstPostRef.current) {
       firstPostRef.current.scrollIntoView({ behavior: "smooth" });
     }
