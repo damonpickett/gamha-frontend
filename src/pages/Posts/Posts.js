@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Posts.css";
@@ -9,6 +9,7 @@ const Posts = () => {
   const [count, setCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 10; // Adjust this value based on your pagination settings
+  const firstPostRef = useRef(null);
 
   const fetchPosts = (url) => {
     setLoading(true);
@@ -31,14 +32,6 @@ const Posts = () => {
     fetchPosts(`${apiUrl}/api/posts/`);
   }, []);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    const timer = setTimeout(() => {
-      document.querySelector(".page-fade-in-transition").style.opacity = 1;
-    }, 200);
-    return () => clearTimeout(timer);
-  }, []);
-
   const handlePageClick = (pageNumber) => {
     const apiUrl = process.env.REACT_APP_API_URL;
     fetchPosts(`${apiUrl}/api/posts/?page=${pageNumber}`);
@@ -47,10 +40,19 @@ const Posts = () => {
 
   const totalPages = Math.ceil(count / postsPerPage);
 
+  useEffect(() => {
+    if (firstPostRef.current) {
+      firstPostRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+    const timer = setTimeout(() => {
+      document.querySelector(".page-fade-in-transition").style.opacity = 1;
+    }, 200);
+    return () => clearTimeout(timer);
+  }, [currentPage]);
 
   return (
     <div
-      className={`blog-list-page page-fade-in-transition ${
+      className={`page-fade-in-transition ${
         loading ? "loading" : ""
       }`}
     >
@@ -59,10 +61,11 @@ const Posts = () => {
           <h1 className="blog-list-h1">Posts</h1>
         </div>
       </div>
-      {list.map((post) => (
+      {list.map((post, index) => (
         <div
           key={post.id}
           className="blog-preview shared-padding shared-wrapping"
+          ref={index === 0 ? firstPostRef : null}
         >
           <div className="shared-title">
             <h1>
