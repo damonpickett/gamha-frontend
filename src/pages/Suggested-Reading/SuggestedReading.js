@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./Books.css";
+import "./SuggestedReading.css";
 
-const Books = () => {
+const SuggestedReading = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -68,4 +68,4 @@ const Books = () => {
   );
 };
 
-export default Books;
+export default SuggestedReading;

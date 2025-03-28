@@ -44,7 +44,7 @@
 .tagline {
   font-family: "Alien League";
   color: #22fb00;
-  font-size: 2.1rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
   line-height: normal;
   /* animation: glow 2s ease-in-out infinite; */
@@ -65,7 +65,7 @@
 
 .author {
   font-family: "Special Elite", system-ui;
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: #ffffff;
 }
 
@@ -95,7 +95,6 @@
     max-width: none;
 
   }
-
 
   .tagline {
     font-size: 4rem;
