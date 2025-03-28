@@ -46,13 +46,13 @@ nav {
   transition: all 0.5s ease-in-out;
   width: 3.5rem;
   height: 3.5rem;
-  position: relative;
+  position: absolute;
+  top: 50%; /* Center vertically */
+  right: 0;
+  transform: translateY(-50%); /* Adjust for the height of the element */
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .menu-btn__burger {
