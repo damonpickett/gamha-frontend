@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./Books.css";
+import "./SuggestedReading.css";
 
-const Books = () => {
+const SuggestedReading = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -35,7 +35,7 @@ const Books = () => {
     <div className={`page-fade-in-transition ${loading ? 'loading' : ''}`}>
       <div className="books-banner">
         <div className="books-overlay-text">
-          <h1>Books</h1>
+          <h1>Suggested Reading</h1>
         </div>
       </div>
 
@@ -68,4 +68,4 @@ const Books = () => {
   );
 };
 
-export default Books;
+export default SuggestedReading;

@@ -28,6 +28,11 @@
     font-style: normal;
     color: #fff;
     text-decoration: none;
+    text-align: center;
+}
+
+.suggested-reading{
+  line-height: 0.5;
 }
 
 .visible {
