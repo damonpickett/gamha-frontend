@@ -41,7 +41,7 @@ const Navbar = (props) => {
             </li>
             <li className="nav-links-item">
               <Link className="page-nav" to="/books">
-                Books
+                Suggested Reading
               </Link>
             </li>
           </ul>

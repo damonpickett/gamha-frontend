@@ -35,7 +35,10 @@
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
+  /* text-align: center;
+  max-width: none; */
+  text-align: left; /* Align text to the left */
+  width: 80%; /* Allow more room for the text */
 }
 
 .tagline {
@@ -87,9 +90,15 @@
     padding-top: 5rem;
   }
 
+  .overlay-text {
+    text-align: center;
+    max-width: none;
+
+  }
+
 
   .tagline {
-    font-size: 3.3rem;
+    font-size: 4rem;
   }
 
   .author {
