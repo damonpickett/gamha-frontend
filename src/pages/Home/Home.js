@@ -4,25 +4,32 @@ import axios from "axios";
 import "./Home.css";
 
 const Home = () => {
-  const [post, setPost] = useState(null);
+  const [myBook, setMyBook] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const apiUrl = process.env.REACT_APP_API_URL;
     axios
-      .get(`${apiUrl}/api/posts/`)
+      .get(`${apiUrl}/api/mybooks/`)
       .then((response) => {
-        const posts = response.data.results; // Use response.data.results
-        console.log("RESPONSE DATA:", response.data);
-        console.log("POSTS:", posts);
-        if (posts && posts.length > 0) {
-          const mostRecentPost = posts.reduce(
-            (max, post) => (post.id > max.id ? post : max),
-            posts[0]
-          );
-          setPost(mostRecentPost);
-        }
+        const books = response.data.results;
+
+        // Find the book with the highest id
+        const mostRecentBook = books.reduce((latest, current) =>
+          current.id > latest.id ? current : latest
+        );
+
+        setMyBook(mostRecentBook); // Set the most recent book
+        setLoading(false);
+        console.log("Most Recent Book:", mostRecentBook);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(
+          "There was an error fetching data from the mybook endpoint!",
+          error
+        );
+        setLoading(false);
+      });
   }, []);
 
   useEffect(() => {
@@ -48,31 +55,30 @@ const Home = () => {
       </div>
 
       <div className="shared-wrapping">
-        {post ? (
-          <div className="blog-post">
-            <div className="shared-title">
-              <h1>{post.title}</h1>
-              <h2>{post.subtitle}</h2>
-            </div>
-            <div className="blog-post-image">
-              <img src={post.post_cover} alt="Ancient Matriarch" />
-            </div>
-            <div
-              className="shared-content"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            ></div>
-            <p className="date">
-              Originally Published: {post.originally_published.split("T")[0]}
-            </p>
-            <div className="blog-post-nav-section">
-              <Link className="in-page-nav" to="/posts">
-                See All
-              </Link>
+        <div className="latest-release">
+          <h1>
+            <a className="inherit-style" href={myBook?.amazon_link} target="_blank">
+              Available Now
+            </a>
+          </h1>
+          <div className="latest-release-content">
+            <a className="inherit-style" href={myBook?.amazon_link} target="_blank">
+              <img
+                src={myBook?.cover_image}
+                alt="Book cover for Damon Andrew's latest release"
+                className="latest-release-image"
+              />
+            </a>
+            <div className="latest-release-text-button">
+              <p>{myBook?.synopsis}</p>
+              <button className="home-button">
+                <a className="inherit-style" href={myBook?.amazon_link} target="_blank">
+                  Buy Now
+                </a>
+              </button>
             </div>
           </div>
-        ) : (
-          <div>Loading...</div>
-        )}
+        </div>
       </div>
     </div>
   );
