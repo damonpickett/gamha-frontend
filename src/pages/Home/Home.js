@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Home.css";
 
 const Home = () => {
-  const [myBooks, setMyBooks] = useState([]);
+  const [myBook, setMyBook] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -12,12 +12,22 @@ const Home = () => {
     axios
       .get(`${apiUrl}/api/mybooks/`)
       .then((response) => {
-        setMyBooks(response.data.results); 
+        const books = response.data.results;
+
+        // Find the book with the highest id
+        const mostRecentBook = books.reduce((latest, current) =>
+          current.id > latest.id ? current : latest
+        );
+
+        setMyBook(mostRecentBook); // Set the most recent book
         setLoading(false);
-        console.log("MyBooks:", myBooks);
+        console.log("Most Recent Book:", mostRecentBook);
       })
       .catch((error) => {
-        console.error("There was an error fetching data from the mybook endpoint!", error);
+        console.error(
+          "There was an error fetching data from the mybook endpoint!",
+          error
+        );
         setLoading(false);
       });
   }, []);
@@ -45,11 +55,30 @@ const Home = () => {
       </div>
 
       <div className="shared-wrapping">
-        <img 
-          src="/path-to-your-image.jpg" 
-          alt="Descriptive text for the image" 
-          className="home-image" 
-        />
+        <div className="latest-release">
+          <h1>
+            <a className="inherit-style" href={myBook?.amazon_link} target="_blank">
+              Available Now
+            </a>
+          </h1>
+          <div className="latest-release-content">
+            <a className="inherit-style" href={myBook?.amazon_link} target="_blank">
+              <img
+                src={myBook?.cover_image}
+                alt="Book cover for Damon Andrew's latest release"
+                className="latest-release-image"
+              />
+            </a>
+            <div className="latest-release-text-button">
+              <p>{myBook?.synopsis}</p>
+              <button className="home-button">
+                <a className="inherit-style" href={myBook?.amazon_link} target="_blank">
+                  Buy Now
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

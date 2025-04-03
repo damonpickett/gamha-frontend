@@ -69,13 +69,35 @@
   color: #ffffff;
 }
 
-.page-break {
-  /* border: #22fb00 1px solid; */
-  padding: 2rem 0.5rem;
+.latest-release {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  padding: 2rem 1rem;
 }
 
-.page-break h2 {
-  font-size: 1.3rem;
+.latest-release h1 {
+  margin-bottom: 1.5rem;
+}
+
+.latest-release-image {
+  border: #ffffff 1px solid;
+  margin-bottom: 1.5rem;
+}
+
+.home-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #22fb00;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-family: "Special Elite", system-ui;
+  color: #000;
 }
 
 .date {
@@ -104,12 +126,12 @@
     font-size: 1.5rem;
   }
 
-  .page-break {
-    padding: 2rem 1rem;
-  }
-
-  .page-break h2 {
-    font-size: 1.5rem;
+  .latest-release-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
   }
 
   .date {
