@@ -69,6 +69,24 @@
   color: #ffffff;
 }
 
+.intro {
+  padding: 2rem 1rem;
+}
+
+.intro h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intro-text {
+  margin-bottom: 2rem;
+}
+
+.intro button {
+  display: block;
+  margin: 0 auto;
+}
+
 .latest-release {
   display: flex;
   flex-direction: column;
