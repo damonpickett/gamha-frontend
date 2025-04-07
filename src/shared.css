@@ -122,7 +122,7 @@ h1 {
   color: #22fb00;
   font-weight: 300;
   font-style: normal;
-  font-size: 1.7rem;
+  font-size: 2.3rem;
   line-height: 1.6rem;
   /* glow effect without animation */
   text-shadow: 0 0 30px #22fb00;
@@ -172,7 +172,7 @@ a:hover {
 }
 
 .shared-padding {
-  padding: 2rem 0.5rem 0.5rem;
+  padding: 2rem 0.5rem 2rem;
 }
 
 .shared-margin-bottom {
@@ -236,7 +236,8 @@ a:hover {
 /* TABLET */
 @media (min-width: 768px) {
   h1 {
-    font-size: 2.074em;
+    font-size: 3em;
+    margin-bottom: 0.2rem;
   }
   h2 {
     font-size: 1.528em;

@@ -5,7 +5,7 @@ import Home from '../../pages/Home/Home';
 import Posts from '../../pages/Posts/Posts';
 import BlogPost from '../../pages/BlogPost/BlogPost';
 import Podcast from '../../pages/Podcast/Podcast';
-import SuggestedReading from '../../pages/Suggested-Reading/SuggestedReading';
+import Books from '../../pages/Books/Books';
 
 const Content = () => {
   return (
@@ -15,7 +15,7 @@ const Content = () => {
         <Route path='/posts' element={<Posts />} />
         <Route path='/blogpost/:id' element={<BlogPost />} />
         <Route path='/podcast' element={<Podcast />} />
-        <Route path='/suggested-reading' element={<SuggestedReading />} />
+        <Route path='/books' element={<Books />} />
       </Routes>
     </div>
   );

@@ -31,10 +31,6 @@
     text-align: center;
 }
 
-.suggested-reading{
-  line-height: 0.5;
-}
-
 .visible {
   transform: translate3d(-0vw, 0, 0);
 }
