@@ -10,6 +10,15 @@
   background-size: cover;
 }
 
+.book-section {
+  margin-bottom: 3rem;
+}
+
+.book-section h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 @media (max-width: 768px) {
   .books-banner {
     background: url("../../assets/images/books-page-creature-2-1157x720.jpg") no-repeat
@@ -51,4 +60,10 @@
 .book-cover {
   width: 200px;
   height: auto;
+}
+
+@media (min-width: 768px) {
+  .book-section {
+    margin-top: 2.5rem;
+  }
 }

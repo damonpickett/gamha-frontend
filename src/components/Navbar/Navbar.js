@@ -40,8 +40,8 @@ const Navbar = (props) => {
               </Link>
             </li>
             <li className="nav-links-item">
-              <Link className="page-nav" to="/suggested-reading">
-                Suggested Reading
+              <Link className="page-nav" to="/books">
+                Books
               </Link>
             </li>
           </ul>
