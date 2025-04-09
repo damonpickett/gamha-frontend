@@ -49,6 +49,19 @@
   line-height: 0.9;
 }
 
+.mybook-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 30px;
+  justify-items: center;
+  align-items: center;
+}
+
+.mybook-cover {
+  width: 100%;
+  height: auto;
+}
+
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
