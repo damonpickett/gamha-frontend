@@ -64,7 +64,7 @@ const Books = () => {
       <div className="books-content shared-wrapping shared-padding">
         <div className="book-section">
           <h1>By Damon Andrew</h1>
-          <div className="book-grid">
+          <div className="mybook-grid">
             {myBooks &&
               myBooks.map((book) => (
                 <div className="book-grid-item" key={book.id}>
@@ -74,7 +74,7 @@ const Books = () => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      className="book-cover"
+                      className="mybook-cover"
                       src={book.cover_image}
                       alt={book.title}
                     />
