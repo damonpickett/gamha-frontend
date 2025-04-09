@@ -14,14 +14,10 @@ const Books = () => {
       .then((response) => {
         const books = response.data.results;
 
-        // Find the book with the highest id
-        const mostRecentBook = books.reduce((latest, current) =>
-          current.id > latest.id ? current : latest
-        );
-
-        setMyBooks(mostRecentBook); // Set the most recent book
+        // Assign the array of books to the myBooks state
+        setMyBooks(books);
         setLoading(false);
-        console.log("Most Recent Book:", mostRecentBook);
+        console.log("My Books:", books);
       })
       .catch((error) => {
         console.error(
@@ -69,43 +65,44 @@ const Books = () => {
         <div className="book-section">
           <h1>By Damon Andrew</h1>
           <div className="book-grid">
-            {myBooks && (
-              <div className="book-grid-item" key={myBooks.id}>
+            {myBooks &&
+              myBooks.map((book) => (
+                <div className="book-grid-item" key={book.id}>
+                  <a
+                    href={book.amazon_link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      className="book-cover"
+                      src={book.cover_image}
+                      alt={book.title}
+                    />
+                  </a>
+                </div>
+              ))}
+          </div>
+        </div>
+        <div className="book-section">
+          <h1>Suggested Reading</h1>
+          <div className="book-grid">
+            {books.map((book) => (
+              <div className="book-grid-item" key={book.id}>
                 <a
-                  href={myBooks.amazon_link}
+                  key={book.id}
+                  href={book.amazon_link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img
                     className="book-cover"
-                    src={myBooks.cover_image}
-                    alt={myBooks.title}
+                    src={book.cover_image}
+                    alt={book.title}
                   />
                 </a>
               </div>
-            )}
+            ))}
           </div>
-        </div>
-        <div className="book-section">
-        <h1>Suggested Reading</h1>
-        <div className="book-grid">
-          {books.map((book) => (
-            <div className="book-grid-item" key={book.id}>
-              <a
-                key={book.id}
-                href={book.amazon_link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  className="book-cover"
-                  src={book.cover_image}
-                  alt={book.title}
-                />
-              </a>
-            </div>
-          ))}
-        </div>
         </div>
       </div>
     </div>
