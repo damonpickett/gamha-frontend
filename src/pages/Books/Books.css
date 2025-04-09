@@ -11,12 +11,12 @@
 }
 
 .book-section {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .book-section h1 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 @media (max-width: 768px) {
