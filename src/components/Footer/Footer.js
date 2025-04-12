@@ -91,9 +91,10 @@ const Footer = () => {
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
-    const baseUrl = process.env.NODE_ENV === "production" 
-      ? "https://gamha-blog-a5a35bdb1d4a.herokuapp.com" 
-      : "http://localhost:8000";
+    const baseUrl =
+      process.env.NODE_ENV === "production"
+        ? "https://gamha-blog-a5a35bdb1d4a.herokuapp.com"
+        : "http://localhost:8000";
     try {
       const response = await axios.post(`${baseUrl}/subscribe/`, {
         email,
@@ -192,9 +193,11 @@ const Footer = () => {
                 Subscribe
               </button>
             </form>
-            <div className="subscribe-message">
-              {message && <p>{message}</p>}
-            </div>
+            {message && (
+              <div className="subscribe-message">
+                <p>{message}</p>
+              </div>
+            )}
           </div>
         </div>
       )}
