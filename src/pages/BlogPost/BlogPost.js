@@ -12,7 +12,13 @@ const BlogPost = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    setFadeIn(true);
+    setFadeIn(false); // Reset fade-in effect
+    setPost(null); // Clear the current post content
+    const timer = setTimeout(() => {
+      setFadeIn(true); // Trigger fade-in effect
+    }, 0); // Delay to ensure state change is applied
+  
+    return () => clearTimeout(timer); // Cleanup timer
   }, [id]);
 
   useEffect(() => {
@@ -58,7 +64,7 @@ const BlogPost = () => {
   }
 
   if (!post) {
-    return <div>Post not found</div>;
+    return <div></div>;
   }
 
   const currentIndex = posts.findIndex((p) => p.id === parseInt(id, 10));
