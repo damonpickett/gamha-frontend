@@ -117,7 +117,7 @@ const Home = () => {
               href={myBook?.amazon_link}
               target="_blank"
             >
-              Available Now
+              Latest Release
             </a>
           </h1>
           <div className="latest-release-content">
