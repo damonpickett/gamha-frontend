@@ -16,7 +16,6 @@ const Home = () => {
     axios
       .get(`${apiUrl}/api/homepage-intro/`)
       .then((response) => {
-        console.log("homepage-intro response:", response);
         setIntroText(response.data.text);
       })
       .catch((error) => {
@@ -38,7 +37,6 @@ const Home = () => {
 
         setMyBook(mostRecentBook); // Set the most recent book
         setLoading(false);
-        console.log("Most Recent Book:", mostRecentBook);
       })
       .catch((error) => {
         console.error(
@@ -119,7 +117,7 @@ const Home = () => {
               href={myBook?.amazon_link}
               target="_blank"
             >
-              Available Now
+              Latest Release
             </a>
           </h1>
           <div className="latest-release-content">

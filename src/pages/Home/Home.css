@@ -103,6 +103,7 @@
 
 .latest-release-image {
   margin-bottom: 1.5rem;
+  border: 1px solid white;
 }
 
 .home-button {
