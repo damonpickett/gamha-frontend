@@ -5,7 +5,6 @@ import "./Footer.css";
 import instagram from "../../assets/icons/ig-48.svg";
 import x from "../../assets/icons/x-48.svg";
 import whatsapp from "../../assets/icons/whatsapp-48.svg";
-import fb from "../../assets/icons/fb-48.svg";
 import reddit from "../../assets/icons/reddit-48.svg";
 
 const Footer = () => {
@@ -57,14 +56,6 @@ const Footer = () => {
     const text = encodeURIComponent("Check this out");
     const url = encodeURIComponent(window.location.href);
     window.open(`https://wa.me/?text=${text}%20${url}`, "_blank");
-  };
-
-  const shareOnFacebook = () => {
-    const url = encodeURIComponent(window.location.href);
-    window.open(
-      `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-      "_blank"
-    );
   };
 
   const shareOnReddit = () => {
